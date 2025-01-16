@@ -1,0 +1,10 @@
+&,
+&::before,
+&::after {
+	user-select: none;
+	user-drag: none;
+	-webkit-user-drag: none;
+	app-region: no-drag;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+}

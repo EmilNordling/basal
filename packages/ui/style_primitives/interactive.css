@@ -1,0 +1,18 @@
+:where([class*='hover:bg']) {
+  --_hover_bg: var(--interactive-background);
+}
+
+:where([class*='hover:fg']) {
+  --_hover_bg: var(--interactive-forground);
+}
+
+:where([class*='hover']) {
+  @media (hover: hover) {
+    pointer-events: all;
+    transition: background-color var(--speed-highlightFadeIn) cubic-bezier(0.83, 0, 0.17, 1);
+
+    &:hover {
+      background-color: var(--_hover_bg, red);
+    }
+  }
+}

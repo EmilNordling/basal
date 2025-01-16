@@ -1,0 +1,46 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "installation": {
+    "version": "20.1.0"
+  },
+  "defaultBase": "main",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "outputs": ["{projectRoot}/coverage"],
+      "cache": true
+    },
+    "dev": {
+      "dependsOn": [],
+      "cache": false
+    },
+    "tauri:build": {
+      "dependsOn": ["^tauri:build"],
+      "cache": true
+    }
+  },
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "packages"
+  },
+  "parallel": 5,
+  "packageManager": "pnpm",
+  "plugins": [
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "testTargetName": "vite:test",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "typecheck"
+      }
+    }
+  ]
+}

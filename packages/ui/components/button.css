@@ -1,0 +1,80 @@
+.wox-button {
+  --_pr: 24px;
+  --_pl: 22px;
+  --_h: 3rem;
+  --_c: rgb(255, 255, 255);
+  --_c-hover: var(--primary-100);
+  --_bg: color(display-p3 0.1255 0.1137 0.1137);
+  --_bg-hover: var(--primary-675);
+  --_gap: 12px;
+  --_cr: 32px;
+
+  --button-base-shadow: 0px 1px 1px -1px rgb(0 0 0 / 0.08),
+    0px 2px 2px -1px rgb(0 0 0 / 0.08), 0px 0px 0px 1px rgb(0 0 0 / 0.06),
+    inset 0px 1px 0px #fff, inset 0px 1px 2px 1px #fff,
+    inset 0px 1px 2px rgb(0 0 0 / 0.06);
+
+  @media (resolution >= 2dppx) {
+    --button-base-shadow: 0px 0.5px 0.5px -0.5px rgb(0 0 0 / 0.08),
+      0px 1px 1px -0.5px rgb(0 0 0 / 0.08), 0px 0px 0px 0.5px rgb(0 0 0 / 0.1),
+      inset 0px 0.5px 0px #fff, inset 0px 0.5px 1px 0.5px #fff,
+      inset 0px 0.5px 2px rgb(0 0 0 / 0.09);
+  }
+
+  &[data-size="3"] {
+    --_pr: 16px;
+    --_pl: 16px;
+    --_h: 2rem;
+    --_gap: 8px;
+    --_cr: 24px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.01375rem;
+  }
+
+  &[data-size="1"] {
+  }
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin: 0px;
+
+  cursor: pointer;
+  display: flex;
+  gap: var(--_gap);
+
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  -webkit-box-pack: center;
+
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01375rem;
+
+  border-radius: var(--_cr);
+  padding-top: 0px;
+  padding-right: var(--_pr);
+  padding-bottom: 0px;
+  padding-left: var(--_pl);
+  height: var(--_h);
+
+  color: var(--_c);
+  background-color: var(--_bg);
+
+  min-width: 24px;
+  min-height: 24px;
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--_c-hover);
+      background-color: var(--_bg-hover);
+    }
+  }
+}

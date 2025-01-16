@@ -1,0 +1,170 @@
+:root {
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --font-size-0: calc(9px * var(--scaling));
+  --font-size-1: calc(11px * var(--scaling));
+  --font-size-2: calc(13px * var(--scaling));
+  --font-size-3: calc(16px * var(--scaling));
+  --font-size-4: calc(18px * var(--scaling));
+  --font-size-5: calc(20px * var(--scaling));
+  --font-size-6: calc(24px * var(--scaling));
+  --font-size-7: calc(28px * var(--scaling));
+  --font-size-8: calc(35px * var(--scaling));
+  --font-size-9: calc(60px * var(--scaling));
+
+  --line-height-0: calc(14px * var(--scaling));
+  --line-height-1: calc(16px * var(--scaling));
+  --line-height-2: calc(20px * var(--scaling));
+  --line-height-3: calc(24px * var(--scaling));
+  --line-height-4: calc(26px * var(--scaling));
+  --line-height-5: calc(28px * var(--scaling));
+  --line-height-6: calc(30px * var(--scaling));
+  --line-height-7: calc(36px * var(--scaling));
+  --line-height-8: calc(40px * var(--scaling));
+  --line-height-9: calc(60px * var(--scaling));
+
+  --letter-spacing-0: 0.0025em;
+  --letter-spacing-1: 0.0025em;
+  --letter-spacing-2: 0em;
+  --letter-spacing-3: 0em;
+  --letter-spacing-4: -0.0025em;
+  --letter-spacing-5: -0.005em;
+  --letter-spacing-6: -0.00625em;
+  --letter-spacing-7: -0.0075em;
+  --letter-spacing-8: -0.01em;
+  --letter-spacing-9: -0.025em;
+
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI (Custom)",
+    Roboto, "Helvetica Neue", "Open Sans (Custom)", system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  --default-font-size: var(--font-size-3);
+  --default-font-style: normal;
+  --default-font-weight: var(--font-weight-regular);
+  --default-line-height: 1.5;
+  --default-letter-spacing: 0em;
+  --default-leading-trim-start: 0.42em;
+  --default-leading-trim-end: 0.36em;
+}
+
+.wox-text {
+  cursor: var(--cursor-text);
+
+  line-height: var(--line-height, var(--default-line-height));
+  letter-spacing: var(--letter-spacing, inherit);
+  font-weight: var(--font-weight-regular);
+
+  &[data-size="0"] {
+    font-size: var(--font-size-0);
+    --line-height: var(--line-height-0);
+    --letter-spacing: var(--letter-spacing-0);
+  }
+
+  &[data-size="1"] {
+    font-size: var(--font-size-1);
+    --line-height: var(--line-height-1);
+    --letter-spacing: var(--letter-spacing-1);
+  }
+
+  &[data-size="2"] {
+    font-size: var(--font-size-2);
+    --line-height: var(--line-height-2);
+    --letter-spacing: var(--letter-spacing-2);
+  }
+
+  &[data-size="3"] {
+    font-size: var(--font-size-3);
+    --line-height: var(--line-height-3);
+    --letter-spacing: var(--letter-spacing-3);
+  }
+
+  &[data-size="4"] {
+    font-size: var(--font-size-4);
+    --line-height: var(--line-height-4);
+    --letter-spacing: var(--letter-spacing-4);
+  }
+
+  &[data-size="5"] {
+    font-size: var(--font-size-5);
+    --line-height: var(--line-height-5);
+    --letter-spacing: var(--letter-spacing-5);
+  }
+
+  &[data-size="6"] {
+    font-size: var(--font-size-6);
+    --line-height: var(--line-height-6);
+    --letter-spacing: var(--letter-spacing-6);
+  }
+
+  &[data-size="7"] {
+    font-size: var(--font-size-7);
+    --line-height: var(--line-height-7);
+    --letter-spacing: var(--letter-spacing-7);
+  }
+
+  &[data-size="8"] {
+    font-size: var(--font-size-8);
+    --line-height: var(--line-height-8);
+    --letter-spacing: var(--letter-spacing-8);
+  }
+
+  &[data-size="9"] {
+    font-size: var(--font-size-9);
+    --line-height: var(--line-height-9);
+    --letter-spacing: var(--letter-spacing-9);
+  }
+
+  &[data-weight="light"] {
+    font-weight: var(--font-weight-light);
+  }
+
+  &[data-weight="regular"] {
+    font-weight: var(--font-weight-regular);
+  }
+
+  &[data-weight="medium"] {
+    font-weight: var(--font-weight-medium);
+  }
+
+  &[data-weight="bold"] {
+    font-weight: var(--font-weight-bold);
+  }
+
+  &[data-align="center"] {
+    text-align: center;
+  }
+
+  &[data-orientation="mixed"] {
+    text-orientation: mixed;
+  }
+
+  &[data-orientation="upright"] {
+    text-orientation: upright;
+  }
+
+  &[data-orientation="sideways-right"] {
+    text-orientation: sideways-right;
+  }
+
+  &[data-orientation="sideways"] {
+    text-orientation: sideways;
+  }
+
+  &[data-orientation="use-glyph-orientation"] {
+    text-orientation: use-glyph-orientation;
+  }
+
+  &[data-writing-mode="horizontal-tb"] {
+    writing-mode: horizontal-tb;
+  }
+
+  &[data-writing-mode="vertical-rl"] {
+    writing-mode: vertical-rl;
+  }
+
+  &[data-writing-mode="vertical-lr"] {
+    writing-mode: vertical-lr;
+  }
+}

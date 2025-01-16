@@ -1,0 +1,59 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "cross-env FORCE_COLOR=1 pnpm install && nx run-many -t dev -p tag:app",
+    "build": "cross-env FORCE_COLOR=1 nx run-many -t build -p tag:app",
+    "start": "cross-env FORCE_COLOR=1 nx run-many -t start -p tag:app",
+    "test": "cross-env FORCE_COLOR=1 nx run-many -t test"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@changesets/cli": "^2.27.1",
+    "@nx/vite": "20.1.0",
+    "@nx/web": "20.1.0",
+    "@react-aria/focus": "3.16.0",
+    "@testing-library/dom": "9.3.3",
+    "@testing-library/jest-dom": "6.2.0",
+    "@testing-library/react": "14.1.2",
+    "@testing-library/react-hooks": "8.0.1",
+    "@testing-library/user-event": "14.5.2",
+    "@types/debug": "^4.1.12",
+    "@types/react": "18.2.46",
+    "@types/react-dom": "18.2.18",
+    "@vitejs/plugin-basic-ssl": "1.0.2",
+    "@vitejs/plugin-react": "4.2.1",
+    "@vitest/ui": "1.1.2",
+    "cross-env": "7.0.3",
+    "debug": "^4.3.4",
+    "happy-dom": "12.10.3",
+    "husky": "8.0.3",
+    "jsdom": "^23.0.1",
+    "lint-staged": "^15.2.0",
+    "nx": "20.1.0",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "terser": "^5.26.0",
+    "tsup": "^8.0.1",
+    "typescript": "5.3.3",
+    "vite": "5.0.10",
+    "vite-plugin-checker": "^0.6.2",
+    "vite-plugin-inspect": "0.8.1",
+    "vite-tsconfig-paths": "4.2.3",
+    "vitest": "1.1.2"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowAny": [
+        "react",
+        "react-dom",
+        "@types/react",
+        "@types/react-dom"
+      ],
+      "ignoreMissing": [
+        "react",
+        "react-dom",
+        "@babel/*",
+        "@types/*"
+      ]
+    }
+  }
+}
