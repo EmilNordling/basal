@@ -1,4 +1,4 @@
-import { Flex, Form, Scroll, Text } from "@ui";
+import { Flex, Form, InputText, Scroll, Text } from "@ui";
 
 export function Settings() {
   return (
@@ -49,7 +49,11 @@ function Section() {
         </Text>
         <Text size="2">General</Text>
 
-        <Form.Root></Form.Root>
+        <Form.Root>
+          <InputText label="email" />
+
+          <Form.Button>Save</Form.Button>
+        </Form.Root>
       </Flex>
     </Flex>
   );

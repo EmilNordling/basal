@@ -1,22 +1,30 @@
-'use client';
+"use client";
 
-import { css } from '@pigment-css/react';
-import { ElementType, forwardRef } from 'react';
-import type { PolymorphicComponentPropWithRef, PolymorphicRef } from './polymorphic.js';
+import { css } from "@pigment-css/react";
+import { ElementType, forwardRef } from "react";
+import type {
+  PolymorphicComponentPropWithRef,
+  PolymorphicRef,
+} from "../components_primitives/polymorphic.js";
 
-type LabelProps<Comp extends ElementType> = PolymorphicComponentPropWithRef<Comp, React.HTMLAttributes<HTMLLabelElement>>;
+type LabelProps<Comp extends ElementType> = PolymorphicComponentPropWithRef<
+  Comp,
+  React.HTMLAttributes<HTMLLabelElement>
+>;
 
 const styledLabel = css({
-  all: 'unset',
-  wordBreak: 'break-all',
-  fontSize: '15px',
-  fontWeight: '500',
-  lineHeight: '35px',
-  color: '111',
+  all: "unset",
+  wordBreak: "break-all",
+  fontSize: "15px",
+  fontWeight: "500",
+  color: "111",
 });
 
-function _Label<Comp extends ElementType = 'label'>(props: LabelProps<Comp>, forwardedRef: PolymorphicRef<Comp>) {
-  const Tag = props.as ?? 'label';
+function _Label<Comp extends ElementType = "label">(
+  props: LabelProps<Comp>,
+  forwardedRef: PolymorphicRef<Comp>
+) {
+  const Tag = props.as ?? "label";
   const labelProps = extractExoticProps(props);
 
   return (
@@ -26,7 +34,7 @@ function _Label<Comp extends ElementType = 'label'>(props: LabelProps<Comp>, for
       onMouseDown={(event) => {
         // only prevent text selection if clicking inside the label itself
         const target = event.target as HTMLElement;
-        if (target.closest('button, input, select, textarea')) return;
+        if (target.closest("button, input, select, textarea")) return;
 
         props.onMouseDown?.(event);
         // prevent text selection when double clicking label
@@ -37,7 +45,9 @@ function _Label<Comp extends ElementType = 'label'>(props: LabelProps<Comp>, for
   );
 }
 
-function extractExoticProps<Comp extends ElementType = 'label'>(props: LabelProps<Comp>) {
+function extractExoticProps<Comp extends ElementType = "label">(
+  props: LabelProps<Comp>
+) {
   const propsCopy = { ...props };
 
   // Removes exotic props.

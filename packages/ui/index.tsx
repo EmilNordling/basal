@@ -1,7 +1,7 @@
 // Components
 // export { VisuallyHidden } from './components/visually_hidden.js';
-export { Button } from "./components/button.js";
-export { Text } from "./components_primitives/text.js";
+export { Button, type ButtonProps } from "./components/button.js";
+export { Text } from "./components/text.js";
 export { Sidebar } from "./components/sidebar.js";
 export { Table } from "./components/table.js";
 export { DropdownMenu } from "./components/dropdown_menu.js";
@@ -39,8 +39,8 @@ export {
   InputText,
   type InputProps,
   type InputTextProps,
-} from "./components_primitives/input.js";
-export { Label, type LabelProps } from "./components_primitives/label.js";
+} from "./components/input_text.js";
+export { Label, type LabelProps } from "./components/label.js";
 export { Form } from "./components_primitives/form.js";
 export { Slot, Slottable } from "./components_primitives/slot.js";
 export { WoxUiPrimitives } from "./components_primitives/ui_primitives_root.js";
