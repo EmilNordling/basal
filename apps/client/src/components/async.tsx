@@ -1,6 +1,6 @@
-import { useConstant } from '@wox-team/wox-app-vitals';
-import { ReactNode, useEffect, useState } from 'react';
-import { Timer } from '@application/internal/timer';
+import { useConstant } from "@wox-team/wox-app-vitals";
+import { ReactNode, useEffect, useState } from "react";
+import { Timer } from "internal/timer";
 
 interface Props<T> {
   delay?: number;
@@ -21,5 +21,11 @@ export function Async<T>(props: Props<T>): JSX.Element {
 
   if (uiTimeout || props.derive == null) return <>{props.fallback}</>;
 
-  return <>{typeof props.children === 'function' ? props.children(props.derive) : props.children}</>;
+  return (
+    <>
+      {typeof props.children === "function"
+        ? props.children(props.derive)
+        : props.children}
+    </>
+  );
 }

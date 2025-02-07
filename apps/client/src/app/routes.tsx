@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Injector, useResolve } from "@wox-team/wox-inject";
-import { AuthService } from "@application/internal/domain/account/auth/auth_service";
+import { AuthService } from "internal/domain/account/auth/auth_service";
 import { Desktop } from "@component/layout/desktop.v2";
 import { RequireAuth } from "@component/require_auth";
 import { SignIn } from "@view/sign_in/sign_in";

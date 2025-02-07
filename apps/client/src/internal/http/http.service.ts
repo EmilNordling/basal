@@ -1,7 +1,7 @@
 import { Injectable } from "@wox-team/wox-inject";
 import { Logger } from "../logger";
 import { HostingService } from "../hosting/hosting.service";
-import { applicationLocalStorage } from "../../../utils/storage/application_storage_local";
+import { applicationLocalStorage } from "../../utils/storage/application_storage_local";
 import { HttpError } from "./http_error";
 
 export interface ProblemDetails<

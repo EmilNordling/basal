@@ -8,11 +8,11 @@ import {
   Sidebar,
   Text,
 } from "@ui";
-import { AuthService } from "@application/internal/domain/account/auth/auth_service";
+import { AuthService } from "internal/domain/account/auth/auth_service";
 import { useResolve } from "@wox-team/wox-inject";
 import { IconType } from "@ui/components_primitives/icon";
 import { forwardRef } from "react";
-import { AccountService } from "@application/internal/domain/account/account_service";
+import { AccountService } from "internal/domain/account/account_service";
 
 export function AppSideBar() {
   const _ = useResolve(AuthService);

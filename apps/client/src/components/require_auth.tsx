@@ -1,4 +1,4 @@
-import { useUser } from "@application/internal/domain/account/auth/use_user";
+import { useUser } from "internal/domain/account/auth/use_user";
 import { Navigate, useLocation } from "react-router-dom";
 
 interface Props {

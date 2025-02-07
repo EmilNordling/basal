@@ -1,4 +1,4 @@
-import { AuthService } from "@application/internal/domain/account/auth/auth_service";
+import { AuthService } from "internal/domain/account/auth/auth_service";
 import { Button, Flex, InputText, Text } from "@ui";
 import { useResolve } from "@wox-team/wox-inject";
 import { useLocation, useNavigate } from "react-router-dom";

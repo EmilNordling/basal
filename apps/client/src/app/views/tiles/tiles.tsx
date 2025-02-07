@@ -1,5 +1,5 @@
-import { ListingService } from "@application/internal/domain/listing/listing_service";
-import { type TileModel } from "@application/internal/domain/models/tile_model";
+import { ListingService } from "internal/domain/listing/listing_service";
+import { type TileModel } from "internal/domain/models/tile_model";
 import { Flex, Icon, Link, PrimitiveButton, Scroll, Text } from "@ui";
 import { useResolve } from "@wox-team/wox-inject";
 import { useNavigate } from "react-router-dom";

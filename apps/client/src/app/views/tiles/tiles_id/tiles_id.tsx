@@ -1,4 +1,4 @@
-import { ListingService } from "@application/internal/domain/listing/listing_service";
+import { ListingService } from "internal/domain/listing/listing_service";
 import {
   RichTextarea,
   Delta,

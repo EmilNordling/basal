@@ -1,8 +1,8 @@
 import { useResolve } from "@wox-team/wox-inject";
 import { AppRoutes } from "./routes";
 import { TitleBar } from "@component/title_bar";
-import { ListingService } from "./internal/domain/listing/listing_service";
-import { LocalDatabase } from "./internal/domain/database/local_database";
+import { ListingService } from "../internal/domain/listing/listing_service";
+import { LocalDatabase } from "../internal/domain/database/local_database";
 import { useEffect } from "react";
 
 export function App() {
