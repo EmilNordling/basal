@@ -3,13 +3,13 @@ import { Injector, useResolve } from "@wox-team/wox-inject";
 import { AuthService } from "internal/domain/account/auth/auth_service";
 import { Desktop } from "@component/layout/desktop.v2";
 import { RequireAuth } from "@component/require_auth";
-import { SignIn } from "@view/sign_in/sign_in";
-import { Tiles } from "@view/tiles/tiles";
-import { Landing } from "@view/landing/ladning";
-import { CompLib } from "@view/comp_lib/comp_lib";
-import { Settings } from "./views/settings/settings";
-import { Theming } from "./views/theming/theming";
-import { TilesId } from "./views/tiles/tiles_id/tiles_id";
+import { SignIn } from "@application/sign_in/sign_in";
+import { Tiles } from "@application/tiles/tiles";
+import { Landing } from "@application/landing/ladning";
+import { CompLib } from "@application/comp_lib/comp_lib";
+import { Settings } from "./settings/settings";
+import { Theming } from "./theming/theming";
+import { TilesId } from "./tiles/tiles_id/tiles_id";
 
 export function AppRoutes() {
   const injector = useResolve(Injector);
