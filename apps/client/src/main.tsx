@@ -15,7 +15,7 @@ if (import.meta.env.VITE_USE_MOCK === "true") {
 }
 
 import "error_control_runtime";
-import { App } from "app/app";
+import { App } from "components/app";
 import { createRoot } from "react-dom/client";
 import { Logger, StdOutChannel } from "internal/logger";
 
