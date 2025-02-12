@@ -20,7 +20,9 @@
   padding: 2px;
 }
 .ScrollBar:hover {
-  background: blue;
+  background: #fff;
+  border-left: 0.5px solid var(--background-border);
+  --scrollbar-size: 8px;
 }
 .ScrollBar[data-orientation="vertical"] {
   width: var(--scrollbar-size);

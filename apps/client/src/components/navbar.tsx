@@ -38,6 +38,7 @@ export function AppSideBar() {
           <Sidebar.Root>
             <Sidebar.Group>
               <Item to="/app/tiles" label="Tiles" icon="RectangleVertical" />
+              <Item to="/app/canvas" label="Canvas" icon="LayoutGrid" />
             </Sidebar.Group>
           </Sidebar.Root>
         </Scroll>

@@ -1,0 +1,64 @@
+.wox-input {
+  appearance: none;
+  box-sizing: border-box;
+  font-size: 13px;
+  padding: 6px 12px;
+  border: 1px solid var(--background-border);
+  border-radius: 5px;
+  transition: border;
+  app-region: no-drag;
+  outline-offset: -1px;
+  height: 32px;
+  width: initial;
+
+  @media (resolution >= 2dppx) {
+    border-width: 0.5px;
+  }
+
+  &:focus-visible {
+    outline: 1px solid var(--focus-ring-color);
+  }
+
+  &[data-variant="ghost"] {
+    border: none;
+    padding: 0;
+    background: none;
+    height: auto;
+    font-size: 20px;
+    font-weight: 450;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
+
+.wox-input-container {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+
+  & .wox-input-container-text {
+    display: flex;
+    gap: 4px;
+    min-width: 0px;
+  }
+
+  &[data-direction="row"] {
+    flex-direction: column;
+
+    & .wox-input-container-text {
+      flex-flow: column wrap;
+      flex-grow: 1;
+    }
+  }
+
+  &[data-direction="column"] {
+    align-items: center;
+
+    & .wox-input-container-text {
+      flex-flow: column wrap;
+      flex-grow: 1;
+    }
+  }
+}

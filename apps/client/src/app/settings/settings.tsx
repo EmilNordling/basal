@@ -1,4 +1,4 @@
-import { Flex, Form, InputText, Scroll, Text } from "@ui";
+import { Flex, Form, InputText, Scroll, Separator, Text } from "@ui";
 
 export function Settings() {
   return (
@@ -39,21 +39,41 @@ function Section() {
         py="3"
         px="4"
         cr="2"
+        gap="4"
         style={{
           background: "#fff",
           border: "0.5px solid var(--background-border)",
         }}
       >
-        <Text size="2" weight="medium">
-          General
-        </Text>
-        <Text size="2">General</Text>
+        <Flex>
+          <Text size="2" weight="medium">
+            General
+          </Text>
+          <Text size="2">General</Text>
+        </Flex>
 
-        <Form.Root>
-          <InputText label="email" />
+        <Flex gap="4">
+          <Form.Root>
+            <Separator.Root />
+            <InputText
+              name="personalNumber"
+              direction="row"
+              label="National Identity Number"
+              defaultValue={"no-nin"}
+            />
+            <Separator.Root />
+            <InputText
+              name="firstName"
+              direction="row"
+              label="FirstName"
+              defaultValue={"no-name"}
+            />
 
-          <Form.Button>Save</Form.Button>
-        </Form.Root>
+            <Flex direction="row" justify="end">
+              <Form.Button>Save</Form.Button>
+            </Flex>
+          </Form.Root>
+        </Flex>
       </Flex>
     </Flex>
   );

@@ -1,6 +1,5 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, forwardRef } from "react";
 import { css } from "@pigment-css/react";
-import { Injectable } from "@wox-team/wox-inject";
 import { Button, ButtonProps } from "../index.js";
 
 const styledForm = css({
@@ -8,7 +7,8 @@ const styledForm = css({
 });
 
 function FormRoot(
-  props: PropsWithChildren<React.FormHTMLAttributes<HTMLFormElement>>
+  props: PropsWithChildren<React.FormHTMLAttributes<HTMLFormElement>>,
+  ref: React.Ref<HTMLFormElement>
 ) {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -18,7 +18,13 @@ function FormRoot(
   }
 
   return (
-    <form className={styledForm} {...props} onSubmit={handleSubmit} noValidate>
+    <form
+      className={styledForm}
+      {...props}
+      ref={ref}
+      onSubmit={handleSubmit}
+      noValidate
+    >
       {props.children}
     </form>
   );
@@ -33,6 +39,6 @@ function FormButton(props: ButtonProps) {
 }
 
 export const Form = {
-  Root: FormRoot,
+  Root: forwardRef(FormRoot),
   Button: FormButton,
 };

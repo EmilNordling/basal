@@ -18,6 +18,7 @@ export function Desktop() {
           style={{
             background: "var(--background-background)",
             border: "0.5px solid var(--background-border)",
+            overflow: "hidden",
           }}
         >
           <Outlet />

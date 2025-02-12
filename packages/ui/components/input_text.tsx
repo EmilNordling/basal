@@ -1,20 +1,21 @@
 import { forwardRef, ForwardedRef, useId } from "react";
 import { css } from "@pigment-css/react";
 import { Label } from "./label.js";
+import { VisuallyHidden } from "./visually_hidden.js";
+import "./input_text.css";
+import { Text } from "./text.js";
 
 export interface InputTextProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
     ExoticProps {}
 
 interface ExoticProps {
-  label?: string;
+  label: string;
+  hideLabel?: boolean;
+  direction?: "column" | "row";
+  helpText?: string;
+  variant?: "default" | "ghost";
 }
-
-const styledContainer = css({
-  display: "flex",
-  flexDirection: "column",
-  gap: "4px",
-});
 
 export const InputText = forwardRef(function InputText(
   props: InputTextProps,
@@ -23,10 +24,30 @@ export const InputText = forwardRef(function InputText(
   const id = useId();
   const sanitiesProps = extractExoticProps(props);
 
-  return (
-    <div className={styledContainer}>
+  const txt = (
+    <>
       <Label htmlFor={id}>{props.label}</Label>
-      <Input {...sanitiesProps} id={id} ref={forwardedRef} />
+      {props.helpText != null ? <Text size="1">{props.helpText}</Text> : null}
+    </>
+  );
+
+  return (
+    <div
+      className="wox-input-container"
+      data-direction={props.direction ?? "vertical"}
+    >
+      {props.hideLabel ? (
+        <VisuallyHidden>{txt}</VisuallyHidden>
+      ) : (
+        <div className="wox-input-container-text">{txt}</div>
+      )}
+
+      <Input
+        {...sanitiesProps}
+        id={id}
+        ref={forwardedRef}
+        data-variant={props.variant}
+      />
     </div>
   );
 });
@@ -34,10 +55,11 @@ export const InputText = forwardRef(function InputText(
 function extractExoticProps(
   props: InputTextProps
 ): React.HTMLAttributes<HTMLInputElement> {
-  const propsCopy = { ...props };
+  const propsCopy = { ...props } as Partial<InputTextProps>;
 
   // Removes exotic props.
   delete propsCopy.label;
+  delete propsCopy.hideLabel;
 
   return propsCopy;
 }
@@ -45,14 +67,9 @@ function extractExoticProps(
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
 
-const styledInput = css({
-  all: "unset",
-  boxSizing: "border-box",
-});
-
 const Input = forwardRef(function Input(
   props: InputProps,
   forwardedRef: ForwardedRef<HTMLInputElement>
 ) {
-  return <input {...props} className={styledInput} ref={forwardedRef} />;
+  return <input {...props} className="wox-input" ref={forwardedRef} />;
 });

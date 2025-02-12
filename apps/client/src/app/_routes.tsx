@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Injector, useResolve } from "@wox-team/wox-inject";
 import { AuthService } from "internal/domain/account/auth/auth_service";
-import { Desktop } from "@component/layout/desktop.v2";
+import { Desktop } from "@application/layout";
 import { RequireAuth } from "@component/require_auth";
 import { SignIn } from "@application/sign_in/sign_in";
 import { Tiles } from "@application/tiles/tiles";
@@ -10,6 +10,7 @@ import { CompLib } from "@application/comp_lib/comp_lib";
 import { Settings } from "./settings/settings";
 import { Theming } from "./theming/theming";
 import { TilesId } from "./tiles/tiles_id/tiles_id";
+import { Page as CanvasPage } from "./canvas/page";
 
 export function AppRoutes() {
   const injector = useResolve(Injector);
@@ -49,6 +50,10 @@ function router(injector: Injector) {
         {
           index: true,
           element: <Tiles />,
+        },
+        {
+          path: "canvas",
+          element: <CanvasPage />,
         },
         {
           path: "tiles",
