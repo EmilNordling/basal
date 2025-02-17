@@ -133,11 +133,15 @@ function Tile(props: TileProps) {
         <Flex
           h="100%"
           w="8"
+          align="center"
+          p="4"
           style={{
             background: "#fff",
             borderLeft: "0.5px solid #ddd",
           }}
-        />
+        >
+          <Text writingMode="vertical-lr">10 Jun 2024</Text>
+        </Flex>
       </Flex>
     </Link>
   );

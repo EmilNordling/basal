@@ -11,6 +11,7 @@ import { Settings } from "./settings/settings";
 import { Theming } from "./theming/theming";
 import { TilesId } from "./tiles/tiles_id/tiles_id";
 import { Page as CanvasPage } from "./canvas/page";
+import { Page as ChatPage } from "./canvas/page";
 
 export function AppRoutes() {
   const injector = useResolve(Injector);
@@ -54,6 +55,10 @@ function router(injector: Injector) {
         {
           path: "canvas",
           element: <CanvasPage />,
+        },
+        {
+          path: "chat",
+          element: <ChatPage />,
         },
         {
           path: "tiles",
