@@ -1,6 +1,6 @@
 import { Flex, Form, InputText, Scroll, Separator, Text } from "@ui";
 
-export function Settings() {
+export default function Settings() {
   return (
     <Flex
       grow="1"

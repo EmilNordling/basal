@@ -1,27 +1,48 @@
 import { Outlet } from "react-router-dom";
-import { Flex, Text } from "@ui";
+import { Flex } from "@ui";
 import { AppSideBar } from "@component/navbar";
 
 export function Desktop() {
   "use container";
 
   return (
-    <Flex direction="row" h="full">
-      <Flex h="full" w={244} px="4" py="2">
-        <AppSideBar />
-      </Flex>
-
-      <Flex py="2" pr="2" grow="1">
+    <Flex w="full" h="full">
+      <Flex
+        px="4"
+        w="full"
+        h={39}
+        direction="row"
+        align="center"
+        style={{
+          background: "var(--background-foreground)",
+          zIndex: 1,
+        }}
+      ></Flex>
+      <Flex direction="row" grow>
         <Flex
-          grow="1"
-          cr="1"
+          h="full"
+          w={244}
+          px="4"
+          py="2"
           style={{
-            background: "var(--background-background)",
-            border: "0.5px solid var(--background-border)",
-            overflow: "hidden",
+            background: "var(--background-foreground)",
           }}
         >
-          <Outlet />
+          <AppSideBar />
+        </Flex>
+
+        <Flex grow="1" pr="1" py="1">
+          <Flex
+            grow="1"
+            cr="2"
+            style={{
+              background: "var(--background-background)",
+              border: "0.5px solid var(--background-border)",
+              overflow: "hidden",
+            }}
+          >
+            <Outlet />
+          </Flex>
         </Flex>
       </Flex>
     </Flex>

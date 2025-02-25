@@ -30,7 +30,7 @@ function FormRoot(
   );
 }
 
-function FormButton(props: ButtonProps) {
+function FormButton<C extends React.ElementType>(props: ButtonProps<C>) {
   return (
     <Button {...props} type="submit">
       {props.children}

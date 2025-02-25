@@ -1,31 +1,41 @@
 "use client";
 
 import cn from "classnames";
-import { forwardRef } from "react";
+import { ForwardedRef, forwardRef } from "react";
 import "./button.css";
 import {
   PrimitiveButton,
   type PrimitiveButtonProps,
 } from "../components_primitives/primitive_button.js";
-import { SpacingSteps } from "../index.js";
+import {
+  type PolymorphicComponentPropWithRef,
+  type SpacingSteps,
+} from "../index.js";
 
-export interface ButtonProps extends PrimitiveButtonProps {
-  size?: SpacingSteps;
+export type ButtonProps<C extends React.ElementType> =
+  PolymorphicComponentPropWithRef<
+    C,
+    PrimitiveButtonProps<C> & {
+      size?: SpacingSteps;
+    }
+  >;
+
+function ButtonPrimitive<C extends React.ElementType = "button">(
+  props: ButtonProps<C>,
+  ref: ForwardedRef<C>
+) {
+  const { className } = props;
+
+  return (
+    <PrimitiveButton
+      {...props}
+      ref={ref}
+      data-size={props.size ?? "5"}
+      className={cn("wox-button", "outline", className)}
+    >
+      {props.children}
+    </PrimitiveButton>
+  );
 }
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  function Button(props: ButtonProps, ref) {
-    const { className } = props;
-
-    return (
-      <PrimitiveButton
-        {...props}
-        ref={ref}
-        data-size={props.size ?? "5"}
-        className={cn("wox-button", "outline", className)}
-      >
-        {props.children}
-      </PrimitiveButton>
-    );
-  }
-);
+export const Button = forwardRef(ButtonPrimitive) as typeof ButtonPrimitive;

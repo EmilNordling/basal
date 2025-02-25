@@ -1,30 +1,38 @@
 "use client";
 
 import cn from "classnames";
-import { forwardRef } from "react";
+import { ForwardedRef, forwardRef } from "react";
 import "./primitive_button.css";
+import { Slot } from "@radix-ui/react-slot";
+import { type PolymorphicComponentPropWithRef } from "./polymorphic.js";
 
-export interface PrimitiveButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "tertiary";
-}
+export type PrimitiveButtonProps<C extends React.ElementType> =
+  PolymorphicComponentPropWithRef<
+    C,
+    {
+      variant?: "primary" | "secondary" | "tertiary";
+    } & React.ButtonHTMLAttributes<C>
+  >;
 
-export const PrimitiveButton = forwardRef<
-  HTMLButtonElement,
-  PrimitiveButtonProps
->(function PrimitiveButton(props: PrimitiveButtonProps, ref) {
+function Button<C extends React.ElementType>(
+  props: PrimitiveButtonProps<C>,
+  ref: ForwardedRef<C>
+) {
   const { type = "button", className } = props;
 
-  const C = "button";
+  const Tag = props.as;
+  const Comp = (props.asChild ? Slot : Tag) ?? ("button" as React.ElementType);
 
   return (
-    <C
+    <Comp
       type={type}
       {...props}
       className={cn("wox-button-reset", className)}
       ref={ref}
     >
       {props.children}
-    </C>
+    </Comp>
   );
-});
+}
+
+export const PrimitiveButton = forwardRef(Button) as typeof Button;

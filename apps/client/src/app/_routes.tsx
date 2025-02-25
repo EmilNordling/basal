@@ -5,13 +5,10 @@ import { Desktop } from "@application/layout";
 import { RequireAuth } from "@component/require_auth";
 import { SignIn } from "@application/sign_in/sign_in";
 import { Tiles } from "@application/tiles/tiles";
-import { Landing } from "@application/landing/ladning";
+import { Page as LandingPage } from "@application/landing/page";
 import { CompLib } from "@application/comp_lib/comp_lib";
-import { Settings } from "./settings/settings";
-import { Theming } from "./theming/theming";
-import { TilesId } from "./tiles/tiles_id/tiles_id";
-import { Page as CanvasPage } from "./canvas/page";
-import { Page as ChatPage } from "./canvas/page";
+import ChatPage from "./chat/page";
+import SettingsPage from "./settings/settings";
 
 export function AppRoutes() {
   const injector = useResolve(Injector);
@@ -23,7 +20,7 @@ function router(injector: Injector) {
   return createBrowserRouter([
     {
       index: true,
-      element: <Landing />,
+      element: <LandingPage />,
     },
     {
       path: "/comp-lib",
@@ -38,7 +35,7 @@ function router(injector: Injector) {
       loader: async () => {
         const authService = injector.resolve(AuthService);
 
-        await authService.load();
+        // await authService.load();
 
         return null;
       },
@@ -53,37 +50,12 @@ function router(injector: Injector) {
           element: <Tiles />,
         },
         {
-          path: "canvas",
-          element: <CanvasPage />,
-        },
-        {
           path: "chat",
           element: <ChatPage />,
         },
         {
-          path: "tiles",
-          children: [
-            {
-              index: true,
-              element: <Tiles />,
-            },
-            {
-              path: ":id",
-              element: <TilesId />,
-            },
-          ],
-        },
-        {
-          path: "my-issues",
-          element: <Tiles />,
-        },
-        {
-          path: "theming",
-          element: <Theming />,
-        },
-        {
           path: "settings",
-          element: <Settings />,
+          element: <SettingsPage />,
         },
       ],
     },

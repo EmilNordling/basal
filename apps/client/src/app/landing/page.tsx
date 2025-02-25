@@ -3,7 +3,7 @@ import { Button, Flex, Icon, Link, Separator, Text } from "@ui";
 import { motion } from "motion/react";
 import { Header } from "./header";
 
-export function Landing() {
+export function Page() {
   return (
     <Flex
       grow="1"
@@ -51,7 +51,7 @@ export function Landing() {
           w={440}
         >
           <Text size="4">
-            I created Basal to explore UI design. It’s a toy project for
+            I created Aora to explore UI design. It’s a toy project for
             experiments, let's see where it goes.
           </Text>
         </Flex>
@@ -78,12 +78,10 @@ export function Landing() {
             <Icon type="Apple" />
             Download for X
           </Button>
-          <Link to="app">
-            <Button>
-              <Icon type="Play" />
-              Explore demo
-            </Button>
-          </Link>
+          <Button as={Link} to="/app">
+            <Icon type="Play" />
+            Explore demo
+          </Button>
         </Flex>
       </Flex>
 
