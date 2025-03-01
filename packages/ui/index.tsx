@@ -26,6 +26,7 @@ export { Toggle } from "./components/toggle.js";
 export { ToggleGroup } from "./components/toggle_group.js";
 export { Toolbar } from "./components/toolbar.js";
 export { Tooltip } from "./components/tooltip.js";
+export { IconButton } from "./components/icon_button.js";
 
 // Primitives
 export {

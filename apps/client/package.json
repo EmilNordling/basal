@@ -4,13 +4,14 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "tauri:build": "tauri build",
     "dev": "vite",
-    "tauri:dev": "tauri dev",
+    "app": "tauri",
     "test": "nx vite:test --run",
     "lint": "TIMING=1 eslint \"src/**/*.ts*\" --fix"
   },
   "dependencies": {
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-opener": "^2",
     "@dnd-kit/core": "^6.1.0",
     "@dnd-kit/modifiers": "^7.0.0",
     "@dnd-kit/sortable": "^8.0.0",
@@ -23,7 +24,6 @@
     "@pigment-css/react": "0.0.1",
     "@preact/signals-react": "1.3.8",
     "@tanstack/react-table": "8.11.3",
-    "@tauri-apps/api": "1.5.4",
     "@ui": "workspace:*",
     "@wox-team/wox-app-vitals": "0.0.0-rc.0",
     "@wox-team/wox-inject": "1.2.2",
@@ -53,7 +53,6 @@
     "@babel/preset-react": "7.23.3",
     "@babel/preset-typescript": "7.23.3",
     "@pigment-css/vite-plugin": "0.0.1",
-    "@tauri-apps/cli": "1.5.12",
     "@wox-team/wox-inject-vite": "0.4.0",
     "autoprefixer": "10.4.16",
     "cssnano": "5.1.14",
@@ -61,7 +60,8 @@
     "postcss": "8.4.33",
     "postcss-preset-env": "7.8.2",
     "tailwindcss": "3.4.0",
-    "terser": "5.26.0"
+    "terser": "5.26.0",
+    "@tauri-apps/cli": "^2"
   },
   "msw": {
     "workerDirectory": "src"

@@ -1,0 +1,22 @@
+.wox-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin: 0px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  -webkit-box-pack: center;
+
+  border-radius: 8px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+
+  min-width: 24px;
+  min-height: 24px;
+}
