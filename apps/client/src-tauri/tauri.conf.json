@@ -12,9 +12,14 @@
   "app": {
     "windows": [
       {
+        "titleBarStyle": "Overlay",
         "title": "auora",
-        "width": 800,
-        "height": 600
+        "resizable": true,
+        "hiddenTitle": true,
+        "width": 1280,
+        "height": 720,
+        "minWidth": 480,
+        "minHeight": 360
       }
     ],
     "security": {

@@ -19,7 +19,7 @@ export function AppSideBar() {
 
   return (
     <Flex grow>
-      <Flex pt="2" align="center" justify="between" direction="row">
+      <Flex align="center" justify="between" direction="row">
         <DropdownMenu.Root>
           <DropdownMenu.Trigger>
             <AccountButton />
@@ -37,7 +37,7 @@ export function AppSideBar() {
         <Scroll>
           <Sidebar.Root>
             <Sidebar.Group>
-              <Item to="/app/chat" label="Chat" icon="RectangleVertical" />
+              <Item to="/chat" label="Chat" icon="RectangleVertical" />
             </Sidebar.Group>
           </Sidebar.Root>
         </Scroll>

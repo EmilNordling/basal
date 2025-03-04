@@ -1,4 +1,4 @@
-const promises = [];
+const promises: Promise<any>[] = [];
 if (import.meta.env.VITE_USE_MOCK === "true") {
   try {
     console.debug("[development] App is using mock data");
