@@ -6,6 +6,7 @@ import { SignIn } from "@application/sign_in/sign_in";
 import { Page as LandingPage } from "@application/landing/page";
 import CustomerPage from "./customers/page";
 import ChatPage from "./chat/page";
+import Asset from "./asset/page";
 import SettingsPage from "./settings/settings";
 import OnboardingPage from "./onboarding/page";
 import CompLibPage from "@application/comp_lib/page";
@@ -48,6 +49,10 @@ export function AppRoutes() {
           {
             path: "/ds-playground",
             element: <CompLibPage />,
+          },
+          {
+            path: "assets",
+            element: <Asset />,
           },
           {
             path: "customers",

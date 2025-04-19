@@ -43,6 +43,7 @@ export function AppSideBar() {
         <Scroll>
           <Sidebar.Root>
             <Sidebar.Group>
+              <Item to="/assets" label="Assets" icon="Files" />
               <Item to="/customers" label="Customers" icon="Users" />
               <Item to="/ds-playground" label="DS playground" icon="Palette" />
             </Sidebar.Group>

@@ -11,9 +11,9 @@
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 
-  --_border-clr: 1px;
+  --_border-size: 1px;
   @media (resolution >= 2dppx) {
-    --_border-clr: 0.5px;
+    --_border-size: 0.5px;
   }
 
   box-shadow: var(--shadow);
@@ -23,7 +23,7 @@
     position: absolute;
     border-radius: 7px;
     inset: 0px;
-    border: var(--_border-clr) solid var(--background-border);
+    border: var(--_border-size) solid var(--background-border);
   }
 }
 .DropdownMenuContent[data-side="top"],
@@ -87,7 +87,7 @@
 }
 
 .DropdownMenuSeparator {
-  height: 1px;
+  height: var(--_border-size);
   background-color: var(--background-border);
   margin: 5px;
 }
