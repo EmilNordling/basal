@@ -33,7 +33,7 @@ function Panel(props: PanelProps) {
   return (
     <Flex w="100%" my="9" gap="6">
       <Flex px="4">
-        <Text size="6">{props.title}</Text>
+        <Text size="regular">{props.title}</Text>
       </Flex>
 
       <Flex

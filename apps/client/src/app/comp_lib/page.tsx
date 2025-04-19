@@ -1,6 +1,7 @@
 import {
   Accordion,
   AlertDialog,
+  AspectRatio,
   Button,
   Checkbox,
   ContextMenu,
@@ -10,15 +11,30 @@ import {
   Icon,
   InputText,
   Menubar,
+  Scroll,
   Text,
 } from "@ui";
 import React from "react";
 
-export function CompLib() {
+export default function Page() {
   return (
-    <Flex p="8" gap="9">
-      <TextShowCase />
-      <ButtonShowCase />
+    <Flex
+      p="4"
+      grow="1"
+      align="center"
+      style={{
+        position: "relative",
+      }}
+    >
+      <Scroll>
+        <Flex px="7" py="4" gap="8">
+          <PaletteShowCase />
+
+          <ButtonShowCase />
+
+          <TextShowCase />
+
+          {/* <ButtonShowCase />
       <InputShowCase />
       <DropdownMenuShowCase />
       <AccordionShowCase />
@@ -27,15 +43,17 @@ export function CompLib() {
       <ContextMenuShowCase />
       <DialogShowCase />
       <HoverCardShowcase />
-      <MenubarShowcase />
+      <MenubarShowcase /> */}
+        </Flex>
+      </Scroll>
     </Flex>
   );
 }
 
 function Section(props: { title: string; children: React.ReactNode }) {
   return (
-    <Flex as="section" gap="3">
-      <Text size="6" weight="medium">
+    <Flex as="section" gap="3" shrink="0">
+      <Text size="regular" weight="medium">
         {props.title}
       </Text>
       <Flex gap="4">{props.children}</Flex>
@@ -43,17 +61,108 @@ function Section(props: { title: string; children: React.ReactNode }) {
   );
 }
 
-function TextShowCase() {
-  const sizes = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"] as const;
+function PaletteShowCase() {
+  const colors = [
+    "neutral",
+    "stone",
+    "primary",
+    "secondary",
+    "zinc",
+    "gray",
+    // "slate",
+    // "rose",
+    // "pink",
+    // "red",
+    // "fuchsia",
+    // "purple",
+    // "violet",
+    // "indigo",
+    // "blue",
+    // "sky",
+    // "cyan",
+    // "teal",
+    // "green",
+    // "emerald",
+    // "lime",
+    // "yellow",
+    // "amber",
+    // "orange",
+  ];
+  const steps = [
+    "50",
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900",
+    "950",
+  ];
 
   return (
     <Section title="Section">
-      {sizes.map((size) => (
-        <Flex key={size} direction="row" align="center" gap="4">
-          <Text size="2">size {size}</Text>
-          <Text size={size}>The quick brown fox jumped over the lazy dog</Text>
-        </Flex>
-      ))}
+      <Flex w="full" gap="2">
+        {colors.map((c) => (
+          <Flex key={c} gap="1" direction="row">
+            {steps.map((s) => (
+              <Flex
+                h={100}
+                key={s}
+                px="3"
+                py="2"
+                style={{
+                  borderRadius: "10px",
+                  background: ` var(--${c}-${s})`,
+                  width: `${(1 / steps.length) * 100}%`,
+                }}
+              >
+                <AspectRatio.Root ratio={3 / 4}>
+                  <Flex direction="row" gap="3" justify="between">
+                    <Text size="tiny">{c}</Text>
+                    <Text size="tiny">{s}</Text>
+                  </Flex>
+                </AspectRatio.Root>
+              </Flex>
+            ))}
+          </Flex>
+        ))}
+      </Flex>
+    </Section>
+  );
+}
+
+function TextShowCase() {
+  const sizes = [
+    "title-9",
+    "title-8",
+    "title-7",
+    "title-6",
+    "title-5",
+    "title-4",
+    "title-3",
+    "title-2",
+    "title-1",
+    "large",
+    "regular",
+    "small",
+    "mini",
+    "micro",
+    "tiny",
+  ] as const;
+
+  return (
+    <Section title="Section">
+      <Flex gap="8">
+        {sizes.map((size) => (
+          <Flex key={size} align="start" gap="2">
+            <Text size="tiny">size {size}</Text>
+            <Text size={size}>Gud hjälpe Zorns mö qwickt få byx av</Text>
+          </Flex>
+        ))}
+      </Flex>
     </Section>
   );
 }
@@ -61,7 +170,119 @@ function TextShowCase() {
 function ButtonShowCase() {
   return (
     <Section title="Button">
-      <Button>Click</Button>
+      <Flex align="start" gap="1">
+        <Button size="1" rounded variant="primary">
+          Click
+        </Button>
+        <Button size="2" rounded variant="primary">
+          Click
+        </Button>
+        <Button size="3" rounded variant="primary">
+          Click
+        </Button>
+        <Button size="4" rounded variant="primary">
+          Click
+        </Button>
+        <Button size="5" rounded variant="primary">
+          Click
+        </Button>
+        <Button size="6" rounded variant="primary">
+          Click
+        </Button>
+        <Button size="7" rounded variant="primary">
+          Click
+        </Button>
+        <Button size="8" rounded variant="primary">
+          Click
+        </Button>
+        <Button size="9" rounded variant="primary">
+          Click
+        </Button>
+
+        <Button size="1" variant="primary">
+          Click
+        </Button>
+        <Button size="2" variant="primary">
+          Click
+        </Button>
+        <Button size="3" variant="primary">
+          Click
+        </Button>
+        <Button size="4" variant="primary">
+          Click
+        </Button>
+        <Button size="5" variant="primary">
+          Click
+        </Button>
+        <Button size="6" variant="primary">
+          Click
+        </Button>
+        <Button size="7" variant="primary">
+          Click
+        </Button>
+        <Button size="8" variant="primary">
+          Click
+        </Button>
+        <Button size="9" variant="primary">
+          Click
+        </Button>
+
+        <Button size="1" variant="secondary">
+          Click
+        </Button>
+        <Button size="2" variant="secondary">
+          Click
+        </Button>
+        <Button size="3" variant="secondary">
+          Click
+        </Button>
+        <Button size="4" variant="secondary">
+          Click
+        </Button>
+        <Button size="5" variant="secondary">
+          Click
+        </Button>
+        <Button size="6" variant="secondary">
+          Click
+        </Button>
+        <Button size="7" variant="secondary">
+          Click
+        </Button>
+        <Button size="8" variant="secondary">
+          Click
+        </Button>
+        <Button size="9" variant="secondary">
+          Click
+        </Button>
+
+        <Button size="1" variant="tertiary">
+          Click
+        </Button>
+        <Button size="2" variant="tertiary">
+          Click
+        </Button>
+        <Button size="3" variant="tertiary">
+          Click
+        </Button>
+        <Button size="4" variant="tertiary">
+          Click
+        </Button>
+        <Button size="5" variant="tertiary">
+          Click
+        </Button>
+        <Button size="6" variant="tertiary">
+          Click
+        </Button>
+        <Button size="7" variant="tertiary">
+          Click
+        </Button>
+        <Button size="8" variant="tertiary">
+          Click
+        </Button>
+        <Button size="9" variant="tertiary">
+          Click
+        </Button>
+      </Flex>
     </Section>
   );
 }

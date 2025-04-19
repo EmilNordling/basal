@@ -27,7 +27,9 @@ export const InputText = forwardRef(function InputText(
   const txt = (
     <>
       <Label htmlFor={id}>{props.label}</Label>
-      {props.helpText != null ? <Text size="1">{props.helpText}</Text> : null}
+      {props.helpText != null ? (
+        <Text size="regular">{props.helpText}</Text>
+      ) : null}
     </>
   );
 

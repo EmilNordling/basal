@@ -3,6 +3,7 @@ import { Flex } from "@ui";
 import { AppSideBar } from "@component/navbar";
 import { useResolve } from "@wox-team/wox-inject";
 import { UniversalUiStore } from "internal/ui/universal_ui_store";
+import "../../../../packages/ui/style_primitives/app_feel.css";
 
 export function Desktop() {
   "use container";
@@ -27,8 +28,9 @@ export function Desktop() {
         {universalUiStore.navbarIsOpen.value ? (
           <Flex
             h="full"
-            w={244}
-            pl="4"
+            w={220}
+            pl="2"
+            pr="1"
             style={{
               background: "var(--background-foreground)",
             }}

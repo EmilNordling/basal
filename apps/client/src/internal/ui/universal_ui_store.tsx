@@ -3,5 +3,5 @@ import { Injectable } from "@wox-team/wox-inject";
 
 @Injectable()
 export class UniversalUiStore {
-  public navbarIsOpen = signal(false);
+  public navbarIsOpen = signal(true);
 }

@@ -21,7 +21,7 @@ export default function Settings() {
           }}
           gap="6"
         >
-          <Text size="6">Settings</Text>
+          <Text size="regular">Settings</Text>
 
           <Section />
         </Flex>
@@ -33,7 +33,7 @@ export default function Settings() {
 function Section() {
   return (
     <Flex gap="4">
-      <Text size="3">General</Text>
+      <Text size="regular">General</Text>
 
       <Flex
         py="3"
@@ -46,10 +46,10 @@ function Section() {
         }}
       >
         <Flex>
-          <Text size="2" weight="medium">
+          <Text size="regular" weight="medium">
             General
           </Text>
-          <Text size="2">General</Text>
+          <Text size="regular">General</Text>
         </Flex>
 
         <Flex gap="4">

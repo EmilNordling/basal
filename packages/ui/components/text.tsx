@@ -1,55 +1,90 @@
 "use client";
 
-import { forwardRef } from "react";
+import { ForwardedRef, forwardRef } from "react";
 import cn from "classnames";
-import type { SpacingSteps } from "../index.js";
 import "./text.css";
+import {
+  ResponsiveSize,
+  getResponsiveClassName,
+} from "../style_primitives/responsive_class_name.js";
+import type { PolymorphicComponentPropWithRef } from "../index.js";
 
 type FontWeight = "light" | "regular" | "medium" | "bold";
 
-interface Props extends React.HTMLAttributes<HTMLSpanElement> {
-  size?: SpacingSteps;
-  weight?: FontWeight;
-  color?: string;
-  align?: "center";
-  writingMode?: "horizontal-tb" | "vertical-rl" | "vertical-lr";
-  orientation?:
-    | "mixed"
-    | "upright"
-    | "sideways-right"
-    | "sideways"
-    | "use-glyph-orientation";
-}
+type Props<C extends React.ElementType = "span"> =
+  PolymorphicComponentPropWithRef<
+    C,
+    {
+      size?: ResponsiveSize<Sizes | "inherit">;
+      weight?: FontWeight;
+      color?: string;
+      boxTrim?: boolean;
+      writingMode?: "horizontal-tb" | "vertical-rl" | "vertical-lr";
+      orientation?:
+        | "mixed"
+        | "upright"
+        | "sideways-right"
+        | "sideways"
+        | "use-glyph-orientation";
+    } & React.HTMLAttributes<C>
+  >;
 
-export const Text = forwardRef<HTMLButtonElement, Props>(function Text(
-  props: Props,
-  ref
+function TextPrimitive<C extends React.ElementType = "span">(
+  props: Props<C>,
+  ref: ForwardedRef<C>
 ) {
   const {
-    size,
+    size = "regular",
     weight,
     color,
     className,
     align,
     writingMode,
     orientation,
-    ...rest
+    boxTrim,
+    ...organicProps
   } = props;
-  const Comp = "span";
+  const C = props.as || "span";
 
   return (
-    <Comp
-      {...rest}
+    <C
       data-align={align}
-      data-size={size}
       data-weight={weight}
       data-orientation={orientation}
       data-writing-mode={writingMode}
+      data-box-trim={boxTrim}
       color={color}
-      className={cn("wox-text", className)}
+      className={cn(
+        PREFIX,
+        getResponsiveClassName(size, PREFIX_SIZE_TARGET),
+        className
+      )}
+      {...organicProps}
       ref={ref}
     >
       {props.children}
-    </Comp>
+    </C>
   );
-});
+}
+
+export const Text = forwardRef(TextPrimitive) as typeof TextPrimitive;
+
+const PREFIX = "wox-text";
+const PREFIX_SIZE_TARGET = PREFIX + "-size-";
+
+type Sizes =
+  | "title-9"
+  | "title-8"
+  | "title-7"
+  | "title-6"
+  | "title-5"
+  | "title-4"
+  | "title-3"
+  | "title-2"
+  | "title-1"
+  | "large"
+  | "regular"
+  | "small"
+  | "mini"
+  | "micro"
+  | "tiny";

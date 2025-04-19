@@ -2,12 +2,12 @@
   --_pr: 24px;
   --_pl: 22px;
   --_h: 3rem;
-  --_c: rgb(255, 255, 255);
-  --_c-hover: var(--primary-100);
-  --_bg: color(display-p3 0.1255 0.1137 0.1137);
-  --_bg-hover: var(--primary-675);
+  --_c: var(--neutral-100);
+  --_c-hover: var(--neutral-100);
+  --_bg: var(--stone-900);
+  --_bg-hover: var(--stone-800);
   --_gap: 12px;
-  --_cr: 32px;
+  --_cr: 1rem;
 
   --button-base-shadow: 0px 1px 1px -1px rgb(0 0 0 / 0.08),
     0px 2px 2px -1px rgb(0 0 0 / 0.08), 0px 0px 0px 1px rgb(0 0 0 / 0.06),
@@ -21,20 +21,23 @@
       inset 0px 0.5px 2px rgb(0 0 0 / 0.09);
   }
 
-  &[data-size="3"] {
-    --_pr: 16px;
-    --_pl: 16px;
-    --_h: 2rem;
-    --_gap: 8px;
-    --_cr: 24px;
-
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.01375rem;
+  &[data-rounded] {
+    --_cr: 9999999px;
   }
 
-  &[data-size="1"] {
+  &[data-variant="secondary"] {
+    --_c: var(--neutral-900);
+    --_c-hover: var(--neutral-900);
+    --_bg: transparent;
+    --_bg-hover: var(--stone-100);
+    box-shadow: var(--button-base-shadow);
+  }
+
+  &[data-variant="tertiary"] {
+    --_c: var(--neutral-900);
+    --_c-hover: var(--neutral-900);
+    --_bg: transparent;
+    --_bg-hover: var(--zinc-100);
   }
 
   display: inline-flex;
@@ -44,7 +47,7 @@
   flex-shrink: 0;
   margin: 0px;
 
-  cursor: pointer;
+  cursor: var(--cursor-button);
   display: flex;
   gap: var(--_gap);
 
@@ -52,11 +55,6 @@
   justify-content: center;
   position: relative;
   -webkit-box-pack: center;
-
-  font-size: 1.0625rem;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: -0.01375rem;
 
   border-radius: var(--_cr);
   padding-top: 0px;
@@ -76,5 +74,71 @@
       color: var(--_c-hover);
       background-color: var(--_bg-hover);
     }
+  }
+}
+
+.wox-button {
+  &:where(.wox-button-size-1) {
+    font: var(--text-tiny);
+    --_cr: 0.22rem;
+    --_h: 1rem;
+    --_pr: 0.5rem;
+    --_pl: 0.5rem;
+  }
+  &:where(.wox-button-size-2) {
+    font: var(--text-micro);
+    --_cr: 0.25rem;
+    --_h: 1.5rem;
+    --_pr: 0.5rem;
+    --_pl: 0.5rem;
+  }
+  &:where(.wox-button-size-3) {
+    font: var(--text-mini);
+    --_cr: 0.28rem;
+    --_h: 1.7rem;
+    --_pr: 0.6rem;
+    --_pl: 0.6rem;
+  }
+  &:where(.wox-button-size-4) {
+    font: var(--text-small);
+    --_cr: 0.3rem;
+    --_h: 1.9rem;
+    --_pr: 0.7rem;
+    --_pl: 0.7rem;
+  }
+  &:where(.wox-button-size-5) {
+    font: var(--regular);
+    --_cr: 0.32rem;
+    --_h: 2.2rem;
+    --_pr: 0.8rem;
+    --_pl: 0.8rem;
+  }
+  &:where(.wox-button-size-6) {
+    font: var(--large);
+    --_cr: 0.35rem;
+    --_h: 2.5rem;
+    --_pr: 0.9rem;
+    --_pl: 0.9rem;
+  }
+  &:where(.wox-button-size-7) {
+    font: var(--title-3);
+    --_cr: 0.6rem;
+    --_h: 3rem;
+    --_pr: 1.2rem;
+    --_pl: 1.2rem;
+  }
+  &:where(.wox-button-size-8) {
+    font: var(--title-5);
+    --_cr: 0.7rem;
+    --_h: 4rem;
+    --_pr: 1.7rem;
+    --_pl: 1.7rem;
+  }
+  &:where(.wox-button-size-9) {
+    font: var(--title-7);
+    --_cr: 1rem;
+    --_h: 5rem;
+    --_pr: 2rem;
+    --_pl: 2rem;
   }
 }

@@ -1,16 +1,16 @@
 import { styled } from "@pigment-css/react";
-import { Button, Flex, Icon, Link, Separator, Text } from "@ui";
+import { Button, Flex, Icon, Link, Scroll, Separator, Text } from "@ui";
 import { motion } from "motion/react";
-import { Header } from "./header";
+import { Header } from "./_components/header";
 
 export function Page() {
   return (
     <Flex
-      grow="1"
       gap="4"
       style={{
         background: "#fff",
         minHeight: "100%",
+        position: "relative",
       }}
     >
       <Header />
@@ -27,7 +27,7 @@ export function Page() {
         }}
         px="4"
       >
-        <Text size="9" weight="medium">
+        <Text size="title-9" weight="medium">
           <AnimatedStrChunks delay={0.15}>
             This is not a product.
           </AnimatedStrChunks>
@@ -50,8 +50,8 @@ export function Page() {
           }}
           w={440}
         >
-          <Text size="4">
-            I created Aora to explore UI design. It’s a toy project for
+          <Text size="regular">
+            I created Auora to explore UI design. It’s a toy project for
             experiments, let's see where it goes.
           </Text>
         </Flex>
@@ -109,7 +109,7 @@ export function Page() {
         mx="auto"
         gap="9"
       >
-        <Text size="8" weight="medium">
+        <Text size="regular" weight="medium">
           Showcase with a subtitle
         </Text>
 
@@ -144,7 +144,7 @@ export function Page() {
         gap="7"
         mb="9"
       >
-        <Text size="8">Another section, more showcase</Text>
+        <Text size="regular">Another section, more showcase</Text>
         <SectionThirds>
           <OneThird />
           <OneThird />
@@ -211,7 +211,7 @@ export function Page() {
         mx="auto"
         gap="7"
       >
-        <Text size="8">Another section, more showcase</Text>
+        <Text size="regular">Another section, more showcase</Text>
         <SectionThirds>
           <OneThird />
           <OneThird />

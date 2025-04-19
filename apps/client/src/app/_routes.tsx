@@ -4,9 +4,11 @@ import { AuthService } from "internal/domain/account/auth/auth_service";
 import { Desktop } from "@application/layout";
 import { SignIn } from "@application/sign_in/sign_in";
 import { Page as LandingPage } from "@application/landing/page";
-import { CompLib } from "@application/comp_lib/comp_lib";
+import CustomerPage from "./customers/page";
 import ChatPage from "./chat/page";
 import SettingsPage from "./settings/settings";
+import OnboardingPage from "./onboarding/page";
+import CompLibPage from "@application/comp_lib/page";
 import { Router } from "internal/ui/router";
 import { useConstant } from "@wox-team/wox-app-vitals";
 
@@ -17,12 +19,12 @@ export function AppRoutes() {
   const definedRoutes = useConstant(() => {
     return router.createBrowserRouter([
       {
-        path: "/ladning",
+        path: "/landing",
         element: <LandingPage />,
       },
       {
-        path: "/comp-lib",
-        element: <CompLib />,
+        path: "/onboarding",
+        element: <OnboardingPage />,
       },
       {
         path: "/login",
@@ -42,6 +44,14 @@ export function AppRoutes() {
           {
             index: true,
             element: <ChatPage />,
+          },
+          {
+            path: "/ds-playground",
+            element: <CompLibPage />,
+          },
+          {
+            path: "customers",
+            element: <CustomerPage />,
           },
           {
             path: "chat",

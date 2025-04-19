@@ -7,12 +7,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { type PolymorphicComponentPropWithRef } from "./polymorphic.js";
 
 export type PrimitiveButtonProps<C extends React.ElementType> =
-  PolymorphicComponentPropWithRef<
-    C,
-    {
-      variant?: "primary" | "secondary" | "tertiary";
-    } & React.ButtonHTMLAttributes<C>
-  >;
+  PolymorphicComponentPropWithRef<C, React.ButtonHTMLAttributes<C>>;
 
 function Button<C extends React.ElementType>(
   props: PrimitiveButtonProps<C>,

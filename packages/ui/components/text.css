@@ -1,8 +1,99 @@
 :root {
   --font-weight-light: 300;
   --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
+  --font-weight-medium: 450;
+  --font-weight-semibold: 550;
+  --font-weight-bold: 500;
+
+  --title-1: var(--font-weight-semibold) var(--title-1-size) /
+    var(--title-1-line-height) var(--font-regular);
+  --title-1-size: 1.0625rem
+  --title-1-line-height: var(--cap-size, 1.4);
+  --title-1-letter-spacing: -0.012em;
+  --title-2: var(--font-weight-semibold) var(--title-2-size) /
+    var(--title-2-line-height) var(--font-regular);
+  --title-2-size: 1.3125rem;
+  --title-2-line-height: var(--cap-size, 1.33);
+  --title-2-letter-spacing: -0.012em;
+  --title-3: var(--font-weight-semibold) var(--title-3-size) /
+    var(--title-3-line-height) var(--font-regular);
+  --title-3-size: 1.5rem;
+  --title-3-line-height: var(--cap-size, 1.33);
+  --title-3-letter-spacing: -0.012em;
+  --title-4: var(--font-weight-semibold) var(--title-4-size) /
+    var(--title-4-line-height) var(--font-regular);
+  --title-4-size: 2rem;
+  --title-4-line-height: var(--cap-size, 1.125);
+  --title-4-letter-spacing: -0.022em;
+  --title-5: var(--font-weight-semibold) var(--title-5-size) /
+    var(--title-5-line-height) var(--font-regular);
+  --title-5-size: 2.5rem;
+  --title-5-line-height: var(--cap-size, 1.1);
+  --title-5-letter-spacing: -0.022em;
+  --title-6: var(--font-weight-semibold) var(--title-6-size) /
+    var(--title-6-line-height) var(--font-regular);
+  --title-6-size: 3rem;
+  --title-6-line-height: var(--cap-size, 1.1);
+  --title-6-letter-spacing: -0.022em;
+  --title-7: var(--font-weight-semibold) var(--title-7-size) /
+    var(--title-7-line-height) var(--font-regular);
+  --title-7-size: 3.5rem;
+  --title-7-line-height: var(--cap-size, 1.1);
+  --title-7-letter-spacing: -0.022em;
+  --title-8: var(--font-weight-semibold) var(--title-8-size) /
+    var(--title-8-line-height) var(--font-regular);
+  --title-8-size: 4rem;
+  --title-8-line-height: var(--cap-size, 1.06);
+  --title-8-letter-spacing: -0.022em;
+  --title-9: var(--font-weight-semibold) var(--title-9-size) /
+    var(--title-9-line-height) var(--font-regular);
+  --title-9-size: 4.5rem;
+  --title-9-line-height: var(--cap-size, 1);
+  --title-9-letter-spacing: -0.022em;
+  --text-large: var(--text-large-size) / var(--text-large-line-height)
+    var(--font-regular);
+  --text-large-size: 1.0625rem;
+  --text-large-line-height: var(--cap-size, 1.6);
+  --text-large-letter-spacing: 0;
+  --text-regular: var(--text-regular-size) / var(--text-regular-line-height)
+    var(--font-regular);
+  --text-regular-size: 0.9375rem;
+  --text-regular-line-height: var(--cap-size, 1.6);
+  --text-regular-letter-spacing: -0.011em;
+  --text-small: var(--text-small-size) / var(--text-small-line-height)
+    var(--font-regular);
+  --text-small-size: 0.875rem;
+  --text-small-line-height: var(--cap-size, calc(24 / 14));
+  --text-small-letter-spacing: -0.013em;
+  --text-mini: var(--text-mini-size) / var(--text-mini-line-height)
+    var(--font-regular);
+  --text-mini-size: 0.8125rem;
+  --text-mini-line-height: var(--cap-size, 1.5);
+  --text-mini-letter-spacing: -0.01em;
+  --text-micro: var(--text-micro-size) / var(--text-micro-line-height)
+    var(--font-regular);
+  --text-micro-size: 0.75rem;
+  --text-micro-line-height: var(--cap-size, 1.4);
+  --text-micro-letter-spacing: 0;
+  --text-tiny: var(--text-tiny-size) / var(--text-tiny-line-height)
+    var(--font-regular);
+  --text-tiny-size: 0.625rem;
+  --text-tiny-line-height: var(--cap-size, 1.5);
+  --text-tiny-letter-spacing: -0.015em;
+
+  /* --font-size-micro: 0.6875rem;
+  --font-size-microPlus: 0.6875rem;
+  --font-size-mini: 0.75rem;
+  --font-size-miniPlus: 0.75rem;
+  --font-size-small: 0.8125rem;
+  --font-size-smallPlus: 0.8125rem;
+  --font-size-regular: 0.9375rem;
+  --font-size-regularPlus: 0.9375rem;
+  --font-size-large: 1.125rem;
+  --font-size-largePlus: 1.125rem;
+  --font-size-title1: 2.25rem;
+  --font-size-title2: 1.5rem;
+  --font-size-title3: 1.25rem;
 
   --font-size-0: calc(9px * var(--scaling));
   --font-size-1: calc(11px * var(--scaling));
@@ -35,11 +126,13 @@
   --letter-spacing-6: -0.00625em;
   --letter-spacing-7: -0.0075em;
   --letter-spacing-8: -0.01em;
-  --letter-spacing-9: -0.025em;
+  --letter-spacing-9: -0.025em; */
 
   --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI (Custom)",
     Roboto, "Helvetica Neue", "Open Sans (Custom)", system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji";
+
+  --font-regular: var(--default-font-family);
   --default-font-size: var(--font-size-3);
   --default-font-style: normal;
   --default-font-weight: var(--font-weight-regular);
@@ -52,84 +145,42 @@
 .wox-text {
   cursor: var(--cursor-text);
 
-  line-height: var(--line-height, var(--default-line-height));
-  letter-spacing: var(--letter-spacing, inherit);
-  font-weight: var(--font-weight-regular);
-
-  &[data-size="0"] {
-    font-size: var(--font-size-0);
-    --line-height: var(--line-height-0);
-    --letter-spacing: var(--letter-spacing-0);
+  @supports not (text-box: trim-both cap alphabetic) {
+    &[data-box-trim] {
+      --cap-size: 1cap;
+      line-height: var(--cap-size);
+    }
   }
-
-  &[data-size="1"] {
-    font-size: var(--font-size-1);
-    --line-height: var(--line-height-1);
-    --letter-spacing: var(--letter-spacing-1);
-  }
-
-  &[data-size="2"] {
-    font-size: var(--font-size-2);
-    --line-height: var(--line-height-2);
-    --letter-spacing: var(--letter-spacing-2);
-  }
-
-  &[data-size="3"] {
-    font-size: var(--font-size-3);
-    --line-height: var(--line-height-3);
-    --letter-spacing: var(--letter-spacing-3);
-  }
-
-  &[data-size="4"] {
-    font-size: var(--font-size-4);
-    --line-height: var(--line-height-4);
-    --letter-spacing: var(--letter-spacing-4);
-  }
-
-  &[data-size="5"] {
-    font-size: var(--font-size-5);
-    --line-height: var(--line-height-5);
-    --letter-spacing: var(--letter-spacing-5);
-  }
-
-  &[data-size="6"] {
-    font-size: var(--font-size-6);
-    --line-height: var(--line-height-6);
-    --letter-spacing: var(--letter-spacing-6);
-  }
-
-  &[data-size="7"] {
-    font-size: var(--font-size-7);
-    --line-height: var(--line-height-7);
-    --letter-spacing: var(--letter-spacing-7);
-  }
-
-  &[data-size="8"] {
-    font-size: var(--font-size-8);
-    --line-height: var(--line-height-8);
-    --letter-spacing: var(--letter-spacing-8);
-  }
-
-  &[data-size="9"] {
-    font-size: var(--font-size-9);
-    --line-height: var(--line-height-9);
-    --letter-spacing: var(--letter-spacing-9);
+  @supports (text-box: trim-both cap alphabetic) {
+    &[data-box-trim] {
+      text-box: trim-both cap alphabetic;
+    }
   }
 
   &[data-weight="light"] {
     font-weight: var(--font-weight-light);
   }
-
   &[data-weight="regular"] {
     font-weight: var(--font-weight-regular);
   }
-
   &[data-weight="medium"] {
     font-weight: var(--font-weight-medium);
   }
-
+  &[data-weight="semi-bold"] {
+    font-weight: var(--font-weight-semi-bold);
+  }
   &[data-weight="bold"] {
     font-weight: var(--font-weight-bold);
+  }
+
+  &[data-variant="content"] {
+    font-family: inherit;
+  }
+  &[data-variant="brand"] {
+    font-family: var(--brand-font);
+  }
+  &[data-variant="signature"] {
+    font-family: var(--signature-font);
   }
 
   &[data-align="center"] {
@@ -166,5 +217,56 @@
 
   &[data-writing-mode="vertical-lr"] {
     writing-mode: vertical-lr;
+  }
+}
+
+.wox-text {
+  &:where(.wox-text-size-inherit) {
+    font: inherit;
+  }
+  &:where(.wox-text-size-title-9) {
+    font: var(--title-9);
+  }
+  &:where(.wox-text-size-title-8) {
+    font: var(--title-8);
+  }
+  &:where(.wox-text-size-title-7) {
+    font: var(--title-7);
+  }
+  &:where(.wox-text-size-title-6) {
+    font: var(--title-6);
+  }
+  &:where(.wox-text-size-title-5) {
+    font: var(--title-5);
+  }
+  &:where(.wox-text-size-title-4) {
+    font: var(--title-4);
+  }
+  &:where(.wox-text-size-title-3) {
+    font: var(--title-3);
+  }
+  &:where(.wox-text-size-title-2) {
+    font: var(--title-2);
+  }
+  &:where(.wox-text-size-title-1) {
+    font: var(--title-1);
+  }
+  &:where(.wox-text-size-large) {
+    font: var(--text-large);
+  }
+  &:where(.wox-text-size-regular) {
+    font: var(--text-regular);
+  }
+  &:where(.wox-text-size-small) {
+    font: var(--text-small);
+  }
+  &:where(.wox-text-size-mini) {
+    font: var(--text-mini);
+  }
+  &:where(.wox-text-size-micro) {
+    font: var(--text-micro);
+  }
+  &:where(.wox-text-size-tiny) {
+    font: var(--text-tiny);
   }
 }

@@ -1,4 +1,5 @@
-import { DropdownMenu, Flex, IconButton, Scroll, Text } from "@ui";
+import { RichTextarea } from "@component/rich_textarea/rich_textarea";
+import { DropdownMenu, Flex, IconButton, Text } from "@ui";
 
 export default function Page() {
   "use container";
@@ -8,9 +9,13 @@ export default function Page() {
       <TopBar />
 
       <Flex grow="1">
-        <Flex grow="1" p="4"></Flex>
+        <Flex grow="1" p="4">
+          <Text size="regular">qwe</Text>
+        </Flex>
 
-        <Flex h={200} p="4" bg="success-775"></Flex>
+        <Flex h={200} p="4" bg="success-775">
+          <RichTextarea />
+        </Flex>
       </Flex>
     </Flex>
   );
@@ -35,14 +40,14 @@ function TopBar() {
         background: "var(--background-background)",
       }}
     >
-      <Text size="2">Case Files</Text>
+      <Text size="title-1">Case Files</Text>
       <DropdownMenu.Root>
         <DropdownMenu.Trigger>
           <IconButton icon="EllipsisVertical" size="5" />
         </DropdownMenu.Trigger>
         <DropdownMenu.Content align="end">
           <DropdownMenu.Item onClick={handleClick}>
-            <Text size="2">Add new</Text>
+            <Text size="regular">Add new</Text>
           </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu.Root>

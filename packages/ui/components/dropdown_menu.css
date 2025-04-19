@@ -3,21 +3,27 @@
   z-index: 1;
   position: relative;
   min-width: 200px;
-  background-color: #f1f2f4;
+  background-color: #fff;
   border-radius: 8px;
   padding: 5px;
-  box-shadow: 0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+  box-shadow: var(--shadow);
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
-  border: 1px solid #cfcfcf;
+
+  --_border-clr: 1px;
+  @media (resolution >= 2dppx) {
+    --_border-clr: 0.5px;
+  }
+
+  box-shadow: var(--shadow);
 
   &:before {
     content: "";
     position: absolute;
     border-radius: 7px;
     inset: 0px;
-    border: 1px solid #f9fafa;
+    border: var(--_border-clr) solid var(--background-border);
   }
 }
 .DropdownMenuContent[data-side="top"],
@@ -69,7 +75,7 @@
 .DropdownMenuCheckboxItem[data-highlighted],
 .DropdownMenuRadioItem[data-highlighted],
 .DropdownMenuSubTrigger[data-highlighted] {
-  background-color: var(--interactive-forground);
+  background-color: var(--neutral-100);
   color: #3e4143;
 }
 
@@ -77,12 +83,12 @@
   padding-left: 25px;
   font-size: 12px;
   line-height: 25px;
-  color: red;
+  color: var(--text-primary);
 }
 
 .DropdownMenuSeparator {
   height: 1px;
-  background-color: red;
+  background-color: var(--background-border);
   margin: 5px;
 }
 
@@ -103,9 +109,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: red;
+  color: var(--background-border);
   background-color: white;
-  box-shadow: 0 2px 10px red;
+  box-shadow: 0 2px 10px var(--shadow);
 }
 .IconButton:hover {
   background-color: red;

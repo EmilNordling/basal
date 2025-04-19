@@ -27,8 +27,14 @@ export function AppSideBar() {
           <DropdownMenu.Content>
             <DropdownMenu.Item asChild>
               <Link to="settings">
-                <Text size="2">Settings</Text>
+                <Text size="small">Settings</Text>
               </Link>
+            </DropdownMenu.Item>
+
+            <DropdownMenu.Separator />
+
+            <DropdownMenu.Item asChild>
+              <Text size="small">Log out</Text>
             </DropdownMenu.Item>
           </DropdownMenu.Content>
         </DropdownMenu.Root>
@@ -37,7 +43,8 @@ export function AppSideBar() {
         <Scroll>
           <Sidebar.Root>
             <Sidebar.Group>
-              <Item to="/chat" label="Chat" icon="RectangleVertical" />
+              <Item to="/customers" label="Customers" icon="Users" />
+              <Item to="/ds-playground" label="DS playground" icon="Palette" />
             </Sidebar.Group>
           </Sidebar.Root>
         </Scroll>
@@ -84,15 +91,15 @@ const AccountButton = forwardRef<HTMLButtonElement>(function AccountButton(
         align="center"
         justify="center"
         style={{
-          background: "var(--secondary)",
+          background: "var(--primary-500)",
           color: "#fff",
         }}
         cr="1"
       >
-        <Text size="0">C</Text>
+        <Text size="small">C</Text>
       </Flex>
 
-      <Text size="2" weight="medium">
+      <Text size="small" weight="medium">
         {accountService.model.value?.name}
       </Text>
 

@@ -47,7 +47,7 @@ export function TilesId() {
             marginLeft: "auto",
           }}
         >
-          <Text size="6">{tile?.title}</Text>
+          <Text size="regular">{tile?.title}</Text>
           <RichTextarea.raw
             autoFocus
             defaultValue={tile?.body ?? null}

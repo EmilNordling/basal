@@ -1,18 +1,25 @@
 :root {
+  /* All legacy */
   --text-primary: light-dark(lch(9.37 0 282.863), red);
+  /* --text-secondary: light-dark(lch(37.48 1 282.863), red); */
   --text-secondary: light-dark(lch(37.48 1 282.863), red);
   --text-muted: light-dark(lch(39.48 1 282.863), red);
   --background-base: light-dark(lch(93.7% 0 282.863 / 1), red);
-  --background-background: light-dark(lch(98.7 0 282.863), #101011);
-  --background-foreground: light-dark(lch(100 0 0 / 0), #090909);
+  /* --background-background: light-dark(lch(98.7 0 282.863), #101011); */
+  --background-background: var(--neutral-50);
+  /* --background-foreground: light-dark(lch(100 0 0 / 0), #090909); */
+  --background-foreground: var(--zinc-100);
+  --background-standout: light-dark(lch(97 0.01 0), #101011);
 
+  --primary: var(--primary-500);
   --secondary: light-dark(rgb(255, 100, 33), red);
 
-  --background-brand: light-dark(var(--primary-550), red);
+  --background-brand: light-dark(var(--primary-500), red);
 
   --nav-active: light-dark(lch(89.699997 0 282.863007), #101011);
 
   --interactive-forground: light-dark(lch(91.7 0 282.863), #101011);
+  --active-forground: var(--neutral-200);
   --interactive-background: light-dark(lch(97.45 0 282.863), #1b1a1f);
 
   --text-interactive-hover: light-dark(red, var(--gray-a12));

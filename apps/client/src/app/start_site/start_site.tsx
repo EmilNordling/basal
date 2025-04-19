@@ -1,20 +1,20 @@
-import { Flex, Text } from '@ui';
+import { Flex, Text } from "@ui";
 
 export function StartSite() {
   return (
-    <Flex grow='1'>
+    <Flex grow="1">
       <Flex
-        p='4'
+        p="4"
         style={{
-          borderBottom: '1px solid var(--background-border)',
+          borderBottom: "1px solid var(--background-border)",
         }}
       >
-        <Text size='2' weight='medium'>
+        <Text size="regular" weight="medium">
           Logbook
         </Text>
       </Flex>
 
-      <Flex p='4'>
+      <Flex p="4">
         <Text>Start</Text>
       </Flex>
     </Flex>

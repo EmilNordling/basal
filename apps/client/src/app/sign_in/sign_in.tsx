@@ -27,7 +27,7 @@ export function SignIn() {
       <Flex direction="row" grow h="100%">
         <Flex grow align="center" b="50">
           <Flex gap="5" p="4" mt={250}>
-            <Text size="8">Sign in</Text>
+            <Text size="regular">Sign in</Text>
 
             <Flex gap="2">
               <InputText label="username" />

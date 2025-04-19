@@ -32,7 +32,7 @@ const StyledSidebarItem = styled(Link)`
   gap: var(--spacing-2);
 
   &[aria-current="page"] {
-    background-color: var(--nav-active);
+    background-color: var(--active-forground);
   }
 `;
 
@@ -53,7 +53,7 @@ export function SidebarIcon(props: SidebarIconProps) {
     <Flex
       width="4"
       style={{
-        color: "var(--secondary)",
+        color: "var(--stone-900)",
       }}
     >
       {props.children}
@@ -66,7 +66,11 @@ interface SidebarLabelProps {
 }
 
 export function SidebarLabel(props: SidebarLabelProps) {
-  return <Text size="2">{props.children}</Text>;
+  return (
+    <Text size="mini" boxTrim>
+      {props.children}
+    </Text>
+  );
 }
 
 interface SidebarGroupProps {
@@ -77,7 +81,7 @@ interface SidebarGroupProps {
 export function SidebarGroup(props: SidebarGroupProps) {
   return (
     <Flex gap={1}>
-      {props.label ? <Text size="2">{props.label}</Text> : null}
+      {props.label ? <Text size="regular">{props.label}</Text> : null}
       {props.children}
     </Flex>
   );

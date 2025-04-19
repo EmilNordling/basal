@@ -1,13 +1,12 @@
-@import './style_primitives/reset.css';
-@import './style_primitives/color_palette.css';
-@import './style_primitives/scaling.css';
-@import './style_primitives/spacing.css';
-@import './style_primitives/cursor.css';
-@import './style_primitives/colors.light.css';
-@import './style_primitives/app_feel.css';
-@import './style_primitives/interactive.css';
-@import './style_primitives/outline.css';
+@import "./style_primitives/reset.css";
+@import "./style_primitives/scaling.css";
+@import "./style_primitives/spacing.css";
+@import "./style_primitives/cursor.css";
+@import "./style_primitives/colors.light.css";
+@import "./style_primitives/interactive.css";
+@import "./style_primitives/outline.css";
+@import "./style_primitives/color_palette.css";
 
-@import './components_primitives/flex.css';
+@import "./components_primitives/flex.css";
 
-@import './design_tokens.css';
+@import "./design_tokens.css";
