@@ -7,7 +7,7 @@ import {
 import { Flex, Scroll, Text } from "@ui";
 import { useResolve } from "@wox-team/wox-inject";
 import { useParams } from "react-router-dom";
-import { assertIsDefined } from "../../../utils/assert";
+import { assertIsDefined } from "../../../../utils/assert";
 import { styled } from "@pigment-css/react";
 
 export function TilesId() {

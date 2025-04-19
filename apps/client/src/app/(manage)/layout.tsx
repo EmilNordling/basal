@@ -3,7 +3,7 @@ import { Flex } from "@ui";
 import { AppSideBar } from "@component/navbar";
 import { useResolve } from "@wox-team/wox-inject";
 import { UniversalUiStore } from "internal/ui/universal_ui_store";
-import "../../../../packages/ui/style_primitives/app_feel.css";
+import "../../../../../packages/ui/style_primitives/app_feel.css";
 
 export function Desktop() {
   "use container";
