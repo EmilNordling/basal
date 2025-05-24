@@ -1,10 +1,10 @@
-import { Injectable } from '@wox-team/wox-inject';
+import { Injectable } from "@wox-team/wox-inject";
 
 @Injectable({
-  scope: 'transient',
+  scope: "transient",
 })
 export class HostingService {
-  public readonly apiBaseUri = '';
+  public readonly apiBaseUri = "http://localhost:8080";
 
   constructor() {
     // Empty

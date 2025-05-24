@@ -2,6 +2,7 @@ import { signal } from "@preact/signals-react";
 import { Container, Injectable, useResolve } from "@wox-team/wox-inject";
 import Quill, { type Delta as QuillDelta, EmitterSource } from "quill";
 import "./rich_textarea.css";
+import { Flex } from "@ui";
 
 export interface RichTextareaProps {
   autoFocus?: boolean;
@@ -25,9 +26,9 @@ function RichTextareaRaw(props: RichTextareaProps) {
   const controller = useResolve(RichTextareaController);
 
   return (
-    <div>
+    <Flex h="full" p="4" onClick={() => void controller.handleClick()}>
       <div ref={controller.ref(props)} />
-    </div>
+    </Flex>
   );
 }
 
@@ -60,6 +61,12 @@ export class RichTextareaController {
     });
 
     this.editor.value = quill;
+  }
+
+  public handleClick() {
+    console.log(this);
+    const v = this.editor.peek();
+    v?.focus();
   }
 
   public ref(props: RichTextareaProps) {

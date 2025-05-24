@@ -23,10 +23,28 @@ export class AuthService {
     return this.user.peek();
   }
 
-  async login(username: string): AsyncResult<UserModel, unknown> {
-    this.logger.logVerbose("login");
+  async signup(
+    email: string,
+    password: string
+  ): AsyncResult<UserModel, unknown> {
+    this.logger.logVerbose("signup");
 
-    const result = await this.authApi.login({ username });
+    const result = await this.authApi.signup({ email, password });
+    if (result.err) return Err(result.err);
+
+    const user = await this.load();
+    if (user == null) return Err("Failed to load user");
+
+    return Ok(user);
+  }
+
+  async signin(
+    email: string,
+    password: string
+  ): AsyncResult<UserModel, unknown> {
+    this.logger.logVerbose("signin");
+
+    const result = await this.authApi.signin({ email, password });
     if (result.err) return Err(result.err);
 
     const user = await this.load();

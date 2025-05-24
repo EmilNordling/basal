@@ -74,11 +74,11 @@ export function Page() {
           gap="3"
           direction="row"
         >
-          <Button>
+          <Button variant="primary" size="6" rounded>
             <Icon type="Apple" />
             Download for X
           </Button>
-          <Button as={Link} to="/app">
+          <Button variant="primary" size="6" rounded as={Link} to="/manage">
             <Icon type="Play" />
             Explore demo
           </Button>

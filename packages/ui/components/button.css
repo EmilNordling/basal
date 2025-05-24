@@ -6,7 +6,7 @@
   --_c-hover: var(--neutral-100);
   --_bg: var(--stone-900);
   --_bg-hover: var(--stone-800);
-  --_gap: 12px;
+  --_gap: 0.5rem;
   --_cr: 1rem;
 
   --button-base-shadow: 0px 1px 1px -1px rgb(0 0 0 / 0.08),

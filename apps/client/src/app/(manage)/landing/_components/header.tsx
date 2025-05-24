@@ -1,14 +1,11 @@
 import styled from "@emotion/styled";
-import { Button, Flex, Icon } from "@ui";
+import { Button, Flex, Icon, Link } from "@ui";
 import { useScroll, useAnimation, motion } from "motion/react";
 import { useEffect, useRef } from "react";
 
 const StyledNavBar = styled.div`
-  margin: 0 auto;
   width: 100%;
-  max-width: 1082px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 24px 48px 0;
   position: relative;
@@ -114,11 +111,24 @@ export function Header() {
       }}
     >
       <StyledNavBar>
-        <StyledLogo>
-          <Icon type="AArrowDown" />
-        </StyledLogo>
+        <Flex
+          direction="row"
+          mx="auto"
+          w="full"
+          align="center"
+          justify="between"
+          style={{
+            maxWidth: "1082px",
+          }}
+        >
+          <StyledLogo>
+            <Icon type="AArrowDown" />
+          </StyledLogo>
 
-        <Button size="3">Open App</Button>
+          <Button size="3" as={Link} to="/manage">
+            Open App
+          </Button>
+        </Flex>
       </StyledNavBar>
     </Flex>
   );

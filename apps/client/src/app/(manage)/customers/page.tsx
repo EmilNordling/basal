@@ -2,11 +2,9 @@ import {
   Button,
   DropdownMenu,
   Flex,
-  Form,
+  Icon,
   IconButton,
-  InputText,
   Scroll,
-  Separator,
   Table,
   Text,
 } from "@ui";
@@ -19,7 +17,8 @@ export default function Page() {
       <TopBar />
 
       <Flex
-        px="4"
+        pr="5"
+        pl="4"
         py="2"
         w="full"
         direction="row"
@@ -30,60 +29,122 @@ export default function Page() {
           background: "var(--background-background)",
         }}
       >
-        <Button>Add filter</Button>
+        <Button size="3">
+          <Icon type="ListFilter" strokeWidth={1.5} size={18} /> filter
+        </Button>
 
-        <Flex direction="row" gap="2">
-          <InputText hideLabel label="Search" placeholder="Search" />
-          <IconButton icon="FolderOpenDot" />
+        <Flex direction="row" gap="2"></Flex>
+      </Flex>
+
+      <Flex
+        grow="1"
+        style={{
+          position: "relative",
+          background: "var(--background-foreground)",
+        }}
+      >
+        <Scroll padding>
+          <Flex grow>
+            <Table.Root
+              style={{
+                width: "100%",
+              }}
+            >
+              <Table.Header>
+                <Table.Row>
+                  <Table.Head>
+                    <Flex px="3">
+                      <Text size="mini" weight="medium">
+                        Email
+                      </Text>
+                    </Flex>
+                  </Table.Head>
+                  <Table.Head>
+                    <Flex pl="3">
+                      <Text size="mini" weight="medium">
+                        Name
+                      </Text>
+                    </Flex>
+                  </Table.Head>
+                  <Table.Head>
+                    <Flex pl="3">
+                      <Text size="mini" weight="medium">
+                        Account
+                      </Text>
+                    </Flex>
+                  </Table.Head>
+                  <Table.Head>
+                    <Flex pl="3">
+                      <Text size="mini" weight="medium">
+                        Created
+                      </Text>
+                    </Flex>
+                  </Table.Head>
+                  <Table.Head style={{ width: "24px" }}>
+                    <div />
+                  </Table.Head>
+                </Table.Row>
+              </Table.Header>
+
+              <Row />
+              <Row />
+              <Row />
+              <Row />
+            </Table.Root>
+          </Flex>
+        </Scroll>
+        <Flex grow background="background-background" justify="end">
+          <Flex px="3">
+            <Text size="small">qwe</Text>
+          </Flex>
         </Flex>
       </Flex>
-
-      <Flex grow="1">
-        <Table.Root>
-          <Table.Header>
-            <Table.Row>
-              <Table.Head>
-                <Text size="regular" weight="medium">
-                  Email
-                </Text>
-              </Table.Head>
-              <Table.Head>
-                <Text size="regular" weight="medium">
-                  Name
-                </Text>
-              </Table.Head>
-              <Table.Head>
-                <Text size="regular" weight="medium">
-                  Account
-                </Text>
-              </Table.Head>
-              <Table.Head>
-                <Text size="regular" weight="medium">
-                  Created
-                </Text>
-              </Table.Head>
-            </Table.Row>
-          </Table.Header>
-
-          <Table.Body>
-            <Table.Row>
-              <Table.Cell>
-                <Text size="regular">name</Text>
-              </Table.Cell>
-              <Table.Cell>
-                <Text size="regular">name</Text>
-              </Table.Cell>
-              <Table.Cell>
-                <Text size="regular">name</Text>
-              </Table.Cell>
-              <Table.Cell>
-                <Text size="regular">name</Text>
-              </Table.Cell>
-            </Table.Row>
-          </Table.Body>
-        </Table.Root>
-      </Flex>
     </Flex>
+  );
+}
+
+function Row() {
+  function handleClick() {}
+
+  return (
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell>
+          <Flex px="3">
+            <Text size="mini">name</Text>
+          </Flex>
+        </Table.Cell>
+        <Table.Cell>
+          <Flex pl="3">
+            <Text size="mini">name</Text>
+          </Flex>
+        </Table.Cell>
+        <Table.Cell>
+          <Flex pl="3">
+            <Text size="mini">name</Text>
+          </Flex>
+        </Table.Cell>
+        <Table.Cell>
+          <Flex pl="3">
+            <Text size="mini">name</Text>
+          </Flex>
+        </Table.Cell>
+        <Table.Cell>
+          <Flex pl="3">
+            <DropdownMenu.Root>
+              <DropdownMenu.Trigger>
+                <IconButton icon="Ellipsis" />
+              </DropdownMenu.Trigger>
+              <DropdownMenu.Content align="end">
+                <DropdownMenu.Item onClick={handleClick}>
+                  <Text size="small">Delete...</Text>
+                </DropdownMenu.Item>
+              </DropdownMenu.Content>
+            </DropdownMenu.Root>
+          </Flex>
+        </Table.Cell>
+      </Table.Row>
+    </Table.Body>
   );
 }
 
@@ -94,7 +155,8 @@ function TopBar() {
 
   return (
     <Flex
-      px="4"
+      pl="6"
+      pr="4"
       w="full"
       h={40}
       direction="row"
@@ -106,14 +168,21 @@ function TopBar() {
         background: "var(--background-background)",
       }}
     >
-      <Text size="regular">Customers</Text>
+      <Text
+        size="mini"
+        style={{
+          color: "var(--neutral-600)",
+        }}
+      >
+        Customers
+      </Text>
       <DropdownMenu.Root>
         <DropdownMenu.Trigger>
           <IconButton icon="EllipsisVertical" size="5" />
         </DropdownMenu.Trigger>
         <DropdownMenu.Content align="end">
           <DropdownMenu.Item onClick={handleClick}>
-            <Text size="regular">Add new</Text>
+            <Text size="small">Add new</Text>
           </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu.Root>

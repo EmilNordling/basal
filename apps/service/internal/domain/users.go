@@ -1,6 +1,8 @@
 package domain
 
-import "github.com/gofrs/uuid"
+import (
+	"github.com/gofrs/uuid"
+)
 
 type (
 	User struct {
@@ -10,6 +12,11 @@ type (
 		Token    string    `json:"token"`
 		Image    string    `json:"image"`
 		Bio      string    `json:"bio"`
+	}
+
+	Credentials struct {
+		Email string `json:"email" db:"email"`
+		Password string `json:"password" db:"password"`
 	}
 
 	LoginUserRequest struct {

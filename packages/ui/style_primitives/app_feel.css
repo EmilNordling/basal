@@ -1,15 +1,17 @@
-&,
-&::before,
-&::after {
-  user-select: none;
-  user-drag: none;
-  -webkit-user-drag: none;
-  app-region: no-drag;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
+body:where(.app) {
+  *,
+  *::before,
+  *::after {
+    user-select: none;
+    user-drag: none;
+    -webkit-user-drag: none;
+    app-region: no-drag;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
 }
 
-body {
+body:where(.lock) {
   position: fixed;
   width: 100%;
   height: 100%;

@@ -44,7 +44,7 @@
     min-width: 0px;
   }
 
-  &[data-direction="row"] {
+  &[data-direction="vertical"] {
     flex-direction: column;
 
     & .wox-input-container-text {
@@ -53,7 +53,7 @@
     }
   }
 
-  &[data-direction="column"] {
+  &[data-direction="horizontal"] {
     align-items: center;
 
     & .wox-input-container-text {

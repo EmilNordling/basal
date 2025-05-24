@@ -5,13 +5,16 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+	"net/http"
 	"os"
 	"strconv"
-	"strings"
-	"text/tabwriter"
 	"time"
 
 	_ "github.com/jackc/pgx/v5/stdlib"
+
+	"service/internal/domain"
+
+	"golang.org/x/crypto/bcrypt"
 )
 
 // Service represents a service that interacts with a database.
@@ -26,6 +29,10 @@ type Service interface {
 
 	// Customer
 	Customer() map[string]string
+
+	// Auth
+	Signup(creds *domain.Credentials) error
+	Signin(creds *domain.Credentials, r *http.Request) error
 }
 
 type service struct {
@@ -54,18 +61,6 @@ func New() Service {
 	if dbInstance != nil {
 		return dbInstance
 	}
-
-	w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, ' ', 0)
-	fmt.Fprintln(w, "name\tenv")
-	fmt.Fprintln(w, "DB_DATABASE\t"+database)
-	fmt.Fprintln(w, "DB_USERNAME\t"+username)
-	fmt.Fprintln(w, "DB_PASSWORD\t"+strings.Map(func(_ rune) rune {
-		return '*'
-	}, password))
-	fmt.Fprintln(w, "DB_PORT\t"+port)
-	fmt.Fprintln(w, "DB_HOST\t"+host)
-	fmt.Fprintln(w, "DB_SCHEMA\t"+schema)
-	w.Flush()
 
 	connStr := fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=disable&search_path=%s", username, password, host, port, database, schema)
 	db, err := sql.Open("pgx", connStr)
@@ -143,4 +138,49 @@ func (s *service) Close() error {
 	log.Printf("Disconnected from database: %v", database)
 
 	return s.db.Close()
+}
+
+func (s *service) Signup(creds *domain.Credentials) error {
+  // Salt and hash the password using the bcrypt algorithm
+	// The second argument is the cost of hashing, which we arbitrarily set as 8 (this value can be more or less, depending on the computing power you wish to utilize)
+	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(creds.Password), 8)
+	if err != nil {
+		return err
+	}
+
+  _, err = s.db.Exec("insert into users values (DEFAULT, $1, $2)", creds.Email, string(hashedPassword))
+  if err != nil {
+    return err
+  }
+
+  return nil
+}
+
+func (s *service) Signin(creds *domain.Credentials, r *http.Request) error {
+	// Get the existing entry present in the database for the given email
+	result := s.db.QueryRow("select password from users where email=$1", creds.Email)
+
+	// We create another instance of `Credentials` to store the credentials we get from the database
+	storedCreds := &domain.Credentials{}
+	// Store the obtained password in `storedCreds`
+	err := result.Scan(&storedCreds.Password)
+
+	if err != nil {
+		// If an entry with the email does not exist, send an "Unauthorized"(401) status
+		if err == sql.ErrNoRows {
+			return err
+		}
+
+		return err
+	}
+
+	// Compare the stored hashed password, with the hashed version of the password that was received
+	if err = bcrypt.CompareHashAndPassword([]byte(storedCreds.Password), []byte(creds.Password)); err != nil {
+		// If the two passwords don't match, return a 401 status
+		return err
+	}
+
+	r.SetBasicAuth(creds.Email, storedCreds.Password)
+
+	return nil;
 }

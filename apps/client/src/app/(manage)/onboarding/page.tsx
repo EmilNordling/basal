@@ -23,9 +23,13 @@ export default function Page() {
         >
           <Form.Root>
             <Separator.Root />
-            <InputText direction="row" label="email" />
+            <InputText direction="horizontal" label="email" />
             <Separator.Root />
-            <InputText name="firstName" direction="row" label="FirstName" />
+            <InputText
+              name="firstName"
+              direction="horizontal"
+              label="FirstName"
+            />
 
             <Flex direction="row" justify="end">
               <Form.Button>Save</Form.Button>

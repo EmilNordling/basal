@@ -1,6 +1,6 @@
 "use client";
 
-import { forwardRef } from "react";
+import { HTMLAttributes, ThHTMLAttributes, forwardRef } from "react";
 import "./table.css";
 import { styled } from "@pigment-css/react";
 
@@ -8,27 +8,54 @@ interface Props {
   children: React.ReactNode;
 }
 
-const TableRootStyle = styled.div``;
+interface TableRootProps extends HTMLAttributes<HTMLTableElement> {
+  children: React.ReactNode;
+}
 
-function TableRoot(props: Props, ref: React.LegacyRef<HTMLTableElement>) {
-  return <table ref={ref} {...props} />;
+const TableRootStyle = styled.table`
+  border-collapse: collapse;
+`;
+
+function TableRoot(
+  props: TableRootProps,
+  ref: React.LegacyRef<HTMLTableElement>
+) {
+  return <TableRootStyle ref={ref} {...props} />;
+}
+
+interface TableHeaderProps extends HTMLAttributes<HTMLTableSectionElement> {
+  children: React.ReactNode;
 }
 
 const TableHeaderStyle = styled.thead`
   background: var(--background-standout);
-  border-bottom-width: 1px;
-  border-top-width: 0px;
-  border-color: red;
+  border-bottom: 0.5px solid transparent;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 0.5px;
+    background: var(--background-border);
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
 `;
 
 function TableHeader(
-  props: Props,
+  props: TableHeaderProps,
   ref: React.LegacyRef<HTMLTableSectionElement>
 ) {
   return <TableHeaderStyle ref={ref} {...props} />;
 }
 
-const TbodyStyle = styled.tbody``;
+const TbodyStyle = styled.tbody`
+  border-bottom: 0.5px solid var(--background-border);
+  background: var(--background-background);
+`;
 
 function TableBody(
   props: Props,
@@ -48,12 +75,19 @@ function TableRow(props: Props, ref: React.LegacyRef<HTMLTableRowElement>) {
   return <tr ref={ref} {...props} />;
 }
 
+interface TableHeadProps extends HTMLAttributes<HTMLTableCellElement> {
+  children: React.ReactNode;
+}
+
 const TableHeadStyle = styled.th`
   height: 3rem;
   padding: 0 1rem;
 `;
 
-function TableHead(props: Props, ref: React.LegacyRef<HTMLTableCellElement>) {
+function TableHead(
+  props: TableHeadProps,
+  ref: React.LegacyRef<HTMLTableCellElement>
+) {
   return <TableHeadStyle ref={ref} {...props} />;
 }
 

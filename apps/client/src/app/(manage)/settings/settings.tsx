@@ -57,14 +57,14 @@ function Section() {
             <Separator.Root />
             <InputText
               name="personalNumber"
-              direction="row"
+              direction="horizontal"
               label="National Identity Number"
               defaultValue={"no-nin"}
             />
             <Separator.Root />
             <InputText
               name="firstName"
-              direction="row"
+              direction="horizontal"
               label="FirstName"
               defaultValue={"no-name"}
             />

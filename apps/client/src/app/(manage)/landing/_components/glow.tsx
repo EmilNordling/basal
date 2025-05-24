@@ -108,9 +108,11 @@ export function Glow() {
         // After a pulse, don't transition from "high" → "medium"
         if (currentState === "high" && nextState === "medium" && pulse) {
           light.dataset.state = "off";
-        } else {
-          light.dataset.state = nextState;
+
+          return;
         }
+
+        light.dataset.state = nextState;
       });
     }, 1000);
 

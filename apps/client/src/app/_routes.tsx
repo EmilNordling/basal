@@ -2,10 +2,10 @@ import { RouterProvider } from "react-router-dom";
 import { Injector, useResolve } from "@wox-team/wox-inject";
 import { AuthService } from "internal/domain/account/auth/auth_service";
 import { Desktop } from "@application/(manage)/layout";
-import { SignIn } from "@application/(manage)/sign_in/sign_in";
 import { Page as LandingPage } from "@application/(manage)/landing/page";
 import { Router } from "internal/ui/router";
 import { useConstant } from "@wox-team/wox-app-vitals";
+import SignInPage from "@application/(manage)/sign_in/page";
 import CustomerPage from "@application/(manage)/customers/page";
 import ChatPage from "@application/(manage)/chat/page";
 import Asset from "@application/(manage)/asset/page";
@@ -22,12 +22,12 @@ export function AppRoutes() {
   const definedRoutes = useConstant(() => {
     return router.createBrowserRouter([
       {
-        path: "/landing",
+        path: "/",
         element: <LandingPage />,
       },
       {
-        path: "/login",
-        element: <SignIn />,
+        path: "login",
+        element: <SignInPage />,
       },
       {
         path: "/app",
@@ -54,6 +54,7 @@ export function AppRoutes() {
             index: true,
             element: <ChatPage />,
           },
+
           {
             path: "ds-playground",
             element: <CompLibPage />,

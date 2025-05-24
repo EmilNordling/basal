@@ -12,7 +12,7 @@ export interface InputTextProps
 interface ExoticProps {
   label: string;
   hideLabel?: boolean;
-  direction?: "column" | "row";
+  direction?: "horizontal" | "vertical";
   helpText?: string;
   variant?: "default" | "ghost";
 }

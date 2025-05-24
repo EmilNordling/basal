@@ -1,18 +1,18 @@
 const promises: Promise<any>[] = [];
-if (import.meta.env.VITE_USE_MOCK === "true") {
-  try {
-    console.debug("[development] App is using mock data");
-    promises.push(
-      import("../mocks/browser").then(({ worker }) => {
-        worker.start({
-          quiet: true,
-        });
-      })
-    );
-  } catch (e) {
-    console.error(e);
-  }
-}
+// if (import.meta.env.VITE_USE_MOCK === "true") {
+//   try {
+//     console.debug("[development] App is using mock data");
+//     promises.push(
+//       import("../mocks/browser").then(({ worker }) => {
+//         worker.start({
+//           quiet: true,
+//         });
+//       })
+//     );
+//   } catch (e) {
+//     console.error(e);
+//   }
+// }
 
 import "error_control_runtime";
 import { App } from "components/app";

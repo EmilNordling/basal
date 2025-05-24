@@ -4,11 +4,20 @@ import { AppSideBar } from "@component/navbar";
 import { useResolve } from "@wox-team/wox-inject";
 import { UniversalUiStore } from "internal/ui/universal_ui_store";
 import "../../../../../packages/ui/style_primitives/app_feel.css";
+import { useEffect } from "react";
 
 export function Desktop() {
   "use container";
 
   const universalUiStore = useResolve(UniversalUiStore);
+
+  useEffect(() => {
+    document.body.classList.add("lock");
+
+    return () => {
+      document.body.classList.remove("lock");
+    };
+  }, []);
 
   return (
     <Flex w="full" h="full">

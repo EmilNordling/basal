@@ -1,5 +1,5 @@
 import cn from "classnames";
-import { ForwardedRef, forwardRef } from "react";
+import { Children, ForwardedRef, Fragment, forwardRef } from "react";
 import "./button.css";
 import {
   PrimitiveButton,
@@ -12,23 +12,11 @@ import {
 } from "../index.js";
 import { getResponsiveClassName } from "../style_primitives/responsive_class_name.js";
 
-export type ButtonProps<C extends React.ElementType> =
-  PolymorphicComponentPropWithRef<
-    C,
-    PrimitiveButtonProps<C> & {
-      size?: SpacingSteps;
-      rounded?: true;
-      variant?: Variant;
-    }
-  >;
-
-type Variant = "primary" | "secondary" | "tertiary";
-
 function ButtonPrimitive<C extends React.ElementType = "button">(
   props: ButtonProps<C>,
   ref: ForwardedRef<C>
 ) {
-  const { className } = props;
+  const { className, children } = props;
 
   const size = props.size ?? SIZE_DEFAULT;
 
@@ -46,12 +34,30 @@ function ButtonPrimitive<C extends React.ElementType = "button">(
         className
       )}
     >
-      <Text size="inherit" boxTrim>
-        {props.children}
-      </Text>
+      {Children.map(children, (x, index) =>
+        typeof x === "string" ? (
+          <Text key={index} size="inherit" boxTrim>
+            {x}
+          </Text>
+        ) : (
+          <Fragment key={index}>{x}</Fragment>
+        )
+      )}
     </PrimitiveButton>
   );
 }
+
+export type ButtonProps<C extends React.ElementType> =
+  PolymorphicComponentPropWithRef<
+    C,
+    PrimitiveButtonProps<C> & {
+      size?: SpacingSteps;
+      rounded?: true;
+      variant?: Variant;
+    }
+  >;
+
+type Variant = "primary" | "secondary" | "tertiary";
 
 const PREFIX = "wox-button";
 const PREFIX_SIZE_TARGET = PREFIX + "-size-";

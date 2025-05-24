@@ -12,33 +12,7 @@ export function UserDesktop() {
 
   return (
     <Flex w="full" h="full">
-      <Flex
-        px="4"
-        w="full"
-        h={39}
-        direction="row"
-        align="center"
-        shrink="0"
-        style={{
-          background: "var(--background-foreground)",
-          zIndex: 1,
-        }}
-      ></Flex>
       <Flex direction="row" grow>
-        {universalUiStore.navbarIsOpen.value ? (
-          <Flex
-            h="full"
-            w={220}
-            pl="2"
-            pr="1"
-            style={{
-              background: "var(--background-foreground)",
-            }}
-          >
-            <AppSideBar />
-          </Flex>
-        ) : null}
-
         <Flex grow="1" px="1" pb="1">
           <Flex
             grow="1"
@@ -49,7 +23,9 @@ export function UserDesktop() {
               overflow: "hidden",
             }}
           >
-            <Outlet />
+            <Flex>
+              <Outlet />
+            </Flex>
           </Flex>
         </Flex>
       </Flex>

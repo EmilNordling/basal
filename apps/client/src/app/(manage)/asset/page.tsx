@@ -15,6 +15,7 @@ export default function Page() {
     </Flex>
   );
 }
+
 function TopBar() {
   function handleClick() {
     console.log("Add new case file");
@@ -34,7 +35,14 @@ function TopBar() {
         background: "var(--background-background)",
       }}
     >
-      <Text size="mini">Assets</Text>
+      <Text
+        size="mini"
+        style={{
+          color: "var(--neutral-600)",
+        }}
+      >
+        Assets
+      </Text>
       <DropdownMenu.Root>
         <DropdownMenu.Trigger>
           <IconButton icon="EllipsisVertical" size="5" />

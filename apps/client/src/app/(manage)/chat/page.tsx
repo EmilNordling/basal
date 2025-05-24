@@ -10,10 +10,17 @@ export default function Page() {
 
       <Flex grow="1">
         <Flex grow="1" p="4">
-          <Text size="regular">qwe</Text>
+          <Flex>
+            <Text size="regular">qwe</Text>
+          </Flex>
         </Flex>
 
-        <Flex h={200} p="4" bg="success-775">
+        <Flex
+          style={{
+            minHeight: "80px",
+            borderTop: "0.5px solid var(--background-border)",
+          }}
+        >
           <RichTextarea />
         </Flex>
       </Flex>
@@ -40,7 +47,14 @@ function TopBar() {
         background: "var(--background-background)",
       }}
     >
-      <Text size="title-1">Case Files</Text>
+      <Text
+        size="mini"
+        style={{
+          color: "var(--neutral-600)",
+        }}
+      >
+        Chat
+      </Text>
       <DropdownMenu.Root>
         <DropdownMenu.Trigger>
           <IconButton icon="EllipsisVertical" size="5" />
