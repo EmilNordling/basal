@@ -1,29 +1,18 @@
-import { DropdownMenu, Flex, IconButton, Text } from "@ui";
+import { Flex, DropdownMenu, IconButton, Text } from "../../../../packages/ui";
 
-export default function Page() {
-  "use container";
-
-  return (
-    <Flex grow="1">
-      <TopBar />
-
-      <Flex grow="1">
-        <Flex grow="1" p="4">
-          <Text size="regular">qwe</Text>
-        </Flex>
-      </Flex>
-    </Flex>
-  );
+interface ActionBarProps {
+  title?: string;
 }
 
-function TopBar() {
+export function ActionBar(props: ActionBarProps) {
   function handleClick() {
     console.log("Add new case file");
   }
 
   return (
     <Flex
-      px="4"
+      pl="4"
+      pr="1"
       w="full"
       h={40}
       direction="row"
@@ -41,7 +30,7 @@ function TopBar() {
           color: "var(--neutral-600)",
         }}
       >
-        Assets
+        {props.title}
       </Text>
       <DropdownMenu.Root>
         <DropdownMenu.Trigger>
@@ -49,7 +38,7 @@ function TopBar() {
         </DropdownMenu.Trigger>
         <DropdownMenu.Content align="end">
           <DropdownMenu.Item onClick={handleClick}>
-            <Text size="small">Add new</Text>
+            <Text size="regular">Add new</Text>
           </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu.Root>

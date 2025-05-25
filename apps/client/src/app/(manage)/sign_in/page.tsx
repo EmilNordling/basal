@@ -20,6 +20,12 @@ export default function Page() {
     const result = await authService.signin(email, password);
     if (result.err) return;
 
+    console.log("herere??");
+
+    await authService.load();
+
+    console.log(from);
+
     navigate(from);
   }
 

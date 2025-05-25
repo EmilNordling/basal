@@ -77,6 +77,12 @@ func (s *Server) signinHandler(w http.ResponseWriter, r *http.Request) {
 
   // If we reach this point, that means the users password was correct, and that they are authorized
 // The default 200 status is sent
+
+resp := make(map[string]string)
+resp["message"] = "ok"
+
+jsonResp, _ := json.Marshal(resp)
+	_, _ = w.Write(jsonResp)
 }
 
 func basicAuth(next http.HandlerFunc) http.HandlerFunc {

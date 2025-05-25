@@ -1,6 +1,6 @@
-import { Injectable } from '@wox-team/wox-inject';
-import { HttpService } from '../http/http.service';
-import { type LogBooksModel } from './models/logbook_model';
+import { Injectable } from "@wox-team/wox-inject";
+import { HttpService } from "../http.service";
+import { type LogBooksModel } from "./models/logbook_model";
 
 @Injectable()
 export class LogbookApi {

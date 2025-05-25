@@ -1,7 +1,7 @@
 import { Injectable } from "@wox-team/wox-inject";
 import { signal } from "@preact/signals-react";
 import { AuthApi } from "../../../api/auth_api";
-import { Logger } from "../../../logger";
+import { Logger } from "../../../../utils/logger";
 import { type UserModel } from "../../../api/models/user_model";
 
 @Injectable()
@@ -15,10 +15,18 @@ export class AuthService {
   async load() {
     this.logger.logVerbose("load");
 
-    const result = await this.authApi.get();
-    if (result.err) return null;
+    // const result = await this.authApi.get();
+    // if (result.err) return null;
 
-    this.user.value = result.ok.data;
+    // this.user.value = result.ok.data;
+
+    this.user.value = {
+      username: "",
+      email: "",
+      token: "",
+      image: "",
+      bio: "",
+    };
 
     return this.user.peek();
   }

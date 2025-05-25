@@ -1,6 +1,6 @@
 import { useConstant } from "@wox-team/wox-app-vitals";
 import { ReactNode, useEffect, useState } from "react";
-import { Timer } from "internal/timer";
+import { Timer } from "utils/timer";
 
 interface Props<T> {
   delay?: number;

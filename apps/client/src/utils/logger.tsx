@@ -1,7 +1,7 @@
 // Reason: Structured logging needs should be able to take in anything.
 
 import { Disposer, EventEmitter } from "@wox-team/wox-app-vitals";
-import { isSomeError } from "./is_some_error";
+import { isSomeError } from "../internal/is_some_error";
 
 export class Logger {
   private static runtime: Nullable<Runtime> = null;

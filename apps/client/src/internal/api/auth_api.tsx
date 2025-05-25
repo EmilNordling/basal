@@ -1,5 +1,5 @@
 import { Injectable } from "@wox-team/wox-inject";
-import { HttpService } from "../http/http.service";
+import { HttpService } from "../http.service";
 import { type UserModel } from "./models/user_model";
 
 @Injectable()

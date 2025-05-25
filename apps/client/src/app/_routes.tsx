@@ -3,17 +3,16 @@ import { Injector, useResolve } from "@wox-team/wox-inject";
 import { AuthService } from "internal/domain/account/auth/auth_service";
 import { Desktop } from "@application/(manage)/layout";
 import { Page as LandingPage } from "@application/(manage)/landing/page";
-import { Router } from "internal/ui/router";
+import { Router } from "internal/router";
 import { useConstant } from "@wox-team/wox-app-vitals";
 import SignInPage from "@application/(manage)/sign_in/page";
 import CustomerPage from "@application/(manage)/customers/page";
 import ChatPage from "@application/(manage)/chat/page";
-import Asset from "@application/(manage)/asset/page";
 import SettingsPage from "@application/(manage)/settings/settings";
-import OnboardingPage from "@application/(manage)/onboarding/page";
 import CompLibPage from "@application/(manage)/comp_lib/page";
 import { UserDesktop } from "@application/(users)/layout";
 import ForYouPage from "@application/(users)/for_you_page/page";
+import { RequireAuth } from "@component/require_auth";
 
 export function AppRoutes() {
   const injector = useResolve(Injector);
@@ -48,7 +47,11 @@ export function AppRoutes() {
 
           return null;
         },
-        element: <Desktop />,
+        element: (
+          <RequireAuth>
+            <Desktop />
+          </RequireAuth>
+        ),
         children: [
           {
             index: true,
@@ -58,14 +61,6 @@ export function AppRoutes() {
           {
             path: "ds-playground",
             element: <CompLibPage />,
-          },
-          {
-            path: "onboarding",
-            element: <OnboardingPage />,
-          },
-          {
-            path: "assets",
-            element: <Asset />,
           },
           {
             path: "customers",

@@ -4,9 +4,11 @@ import { styled } from "@pigment-css/react";
 import "./scroll.css";
 import * as R from "@radix-ui/react-scroll-area";
 import { Fragment } from "react";
+import cn from "classnames";
 
 interface Props {
   children?: React.ReactNode;
+  classNames?: string;
   orientation?: "vertical" | "horizontal";
   padding?: boolean;
 }
@@ -25,7 +27,9 @@ export function Scroll(props: Props) {
       }}
     >
       <R.Root className="ScrollRoot" type="scroll">
-        <R.Viewport className="ScrollAreaViewport">{props.children}</R.Viewport>
+        <R.Viewport className={cn("ScrollAreaViewport", props.classNames)}>
+          {props.children}
+        </R.Viewport>
 
         <C>
           <R.Scrollbar

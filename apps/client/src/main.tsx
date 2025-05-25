@@ -17,7 +17,7 @@ const promises: Promise<any>[] = [];
 import "error_control_runtime";
 import { App } from "components/app";
 import { createRoot } from "react-dom/client";
-import { Logger, StdOutChannel } from "internal/logger";
+import { Logger, StdOutChannel } from "utils/logger";
 
 Logger.attachChannel(new StdOutChannel());
 

@@ -11,16 +11,16 @@ const styledTitleBar = css({
 });
 
 const styledGhost = css({
-  width: "11px",
-  height: "11px",
-  background: "red",
+  width: "12px",
+  height: "12px",
+  background: "var(--stone-300)",
   borderRadius: "9999px",
 });
 
 export function TitleBar() {
   return (
     <Flex className={styledTitleBar} direction="row" data-tauri-drag-region>
-      <Flex direction="row" gap={9} py="2">
+      <Flex direction="row" gap={8} py="2">
         <div className={styledGhost} />
         <div className={styledGhost} />
         <div className={styledGhost} />

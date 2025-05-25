@@ -2,7 +2,7 @@ import { register, isRegistered } from "@tauri-apps/plugin-global-shortcut";
 import { readText } from "@tauri-apps/plugin-clipboard-manager";
 import { Injectable } from "@wox-team/wox-inject";
 import { KeyBindings } from "./key_bindings";
-import { Router } from "./ui/router";
+import { Router } from "./router";
 
 // const script = `
 // tell application "System Events"

@@ -43,10 +43,7 @@ export function AppSideBar() {
         <Scroll>
           <Sidebar.Root>
             <Sidebar.Group>
-              <Item to="chat" label="Chat" icon="MessageCircle" />
-              <Item to="assets" label="Assets" icon="Files" />
-              <Item to="customers" label="Customers" icon="Users" />
-              <Item to="ds-playground" label="DS playground" icon="Palette" />
+              <Item to="chat" label="room#1" icon="MessageCircle" />
             </Sidebar.Group>
           </Sidebar.Root>
         </Scroll>
