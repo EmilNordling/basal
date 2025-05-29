@@ -125,7 +125,7 @@ export function Header() {
             <Icon type="AArrowDown" />
           </StyledLogo>
 
-          <Button size="3" as={Link} to="/manage">
+          <Button size="3" as={Link} to="/app">
             Open App
           </Button>
         </Flex>

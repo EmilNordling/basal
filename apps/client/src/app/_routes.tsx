@@ -1,18 +1,17 @@
 import { RouterProvider } from "react-router-dom";
 import { Injector, useResolve } from "@wox-team/wox-inject";
 import { AuthService } from "internal/domain/account/auth/auth_service";
-import { Desktop } from "@application/(manage)/layout";
-import { Page as LandingPage } from "@application/(manage)/landing/page";
+import { Desktop } from "@application/[org]/layout";
+import { Page as LandingPage } from "@application/landing/page";
 import { Router } from "internal/router";
 import { useConstant } from "@wox-team/wox-app-vitals";
-import SignInPage from "@application/(manage)/sign_in/page";
-import CustomerPage from "@application/(manage)/customers/page";
-import ChatPage from "@application/(manage)/chat/page";
-import SettingsPage from "@application/(manage)/settings/settings";
-import CompLibPage from "@application/(manage)/comp_lib/page";
-import { UserDesktop } from "@application/(users)/layout";
-import ForYouPage from "@application/(users)/for_you_page/page";
 import { RequireAuth } from "@component/require_auth";
+import SignInPage from "@application/sign_in/page";
+import CustomerPage from "@application/customers/page";
+import ChatPage from "@application/[org]/chat/[threadId]/page";
+import SettingsPage from "@application/settings/settings";
+import CompLibPage from "@application/comp_lib/page";
+import HomePage from "@application/[org]/home/page";
 
 export function AppRoutes() {
   const injector = useResolve(Injector);
@@ -29,19 +28,9 @@ export function AppRoutes() {
         element: <SignInPage />,
       },
       {
-        path: "/app",
-        element: <UserDesktop />,
-        children: [
-          {
-            index: true,
-            element: <ForYouPage />,
-          },
-        ],
-      },
-      {
-        path: "/manage",
-        loader: async () => {
-          const authService = injector.resolve(AuthService);
+        path: "/:id",
+        loader: async (args) => {
+          const _ = injector.resolve(AuthService);
 
           // await authService.load();
 
@@ -55,9 +44,8 @@ export function AppRoutes() {
         children: [
           {
             index: true,
-            element: <ChatPage />,
+            element: <HomePage />,
           },
-
           {
             path: "ds-playground",
             element: <CompLibPage />,

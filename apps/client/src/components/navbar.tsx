@@ -21,7 +21,7 @@ export function AppSideBar() {
     <Flex grow>
       <Flex align="center" justify="between" direction="row">
         <DropdownMenu.Root>
-          <DropdownMenu.Trigger>
+          <DropdownMenu.Trigger asChild>
             <AccountButton />
           </DropdownMenu.Trigger>
           <DropdownMenu.Content>
@@ -43,19 +43,8 @@ export function AppSideBar() {
         <Scroll>
           <Sidebar.Root>
             <Sidebar.Group>
+              <Item to="" label="Home" icon="House" />
               <Item to="chat" label="room#1" icon="MessageCircle" />
-
-              <Sidebar.Item
-                to="/create"
-                onClick={(e) => {
-                  e.preventDefault();
-                }}
-              >
-                <Sidebar.Icon>
-                  <Icon type="Plus" />
-                </Sidebar.Icon>
-                <Sidebar.Label>new</Sidebar.Label>
-              </Sidebar.Item>
             </Sidebar.Group>
           </Sidebar.Root>
         </Scroll>
@@ -82,7 +71,7 @@ function Item(props: ItemProps) {
 }
 
 const AccountButton = forwardRef<HTMLButtonElement>(function AccountButton(
-  _,
+  props,
   ref
 ) {
   const accountService = useResolve(AccountService);
@@ -95,6 +84,7 @@ const AccountButton = forwardRef<HTMLButtonElement>(function AccountButton(
         paddingLeft: 6,
       }}
       ref={ref}
+      {...props}
     >
       <Flex
         w="4"

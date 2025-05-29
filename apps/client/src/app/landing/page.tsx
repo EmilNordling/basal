@@ -78,7 +78,7 @@ export function Page() {
             <Icon type="Apple" />
             Download for X
           </Button>
-          <Button variant="primary" size="6" rounded as={Link} to="/manage">
+          <Button variant="primary" size="6" rounded as={Link} to="/app">
             <Icon type="Play" />
             Explore demo
           </Button>

@@ -8,7 +8,7 @@ export default function Page() {
   const location = useLocation();
   const authService = useResolve(AuthService);
 
-  const from = location.state?.from?.pathname || "/manage";
+  const from = location.state?.from?.pathname || "/app";
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();

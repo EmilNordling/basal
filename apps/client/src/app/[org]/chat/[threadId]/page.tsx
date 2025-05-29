@@ -31,7 +31,7 @@ export default function Page() {
           </Scroll>
         </Flex>
 
-        <Promt />
+        <Prompt />
       </Flex>
     </Flex>
   );
@@ -95,7 +95,7 @@ function Message(props: MessageProps) {
   );
 }
 
-function Promt() {
+function Prompt() {
   function handleSubmit() {}
 
   return (
