@@ -44,6 +44,18 @@ export function AppSideBar() {
           <Sidebar.Root>
             <Sidebar.Group>
               <Item to="chat" label="room#1" icon="MessageCircle" />
+
+              <Sidebar.Item
+                to="/create"
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                <Sidebar.Icon>
+                  <Icon type="Plus" />
+                </Sidebar.Icon>
+                <Sidebar.Label>new</Sidebar.Label>
+              </Sidebar.Item>
             </Sidebar.Group>
           </Sidebar.Root>
         </Scroll>

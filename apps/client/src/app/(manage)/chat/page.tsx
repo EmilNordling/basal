@@ -107,6 +107,7 @@ function Promt() {
           borderTop: "0.5px solid var(--background-border)",
         }}
       >
+        <Flex w="6"></Flex>
         <Flex grow>
           <RichTextarea />
         </Flex>
@@ -133,68 +134,11 @@ class Controller {
     this.pages.value = [
       {
         id: crypto.randomUUID(),
-        messages: [
-          {
-            id: crypto.randomUUID(),
-            user: "Alice",
-            text: "Hey there! How's your day going?",
-          },
-          {
-            id: crypto.randomUUID(),
-            user: "Bob",
-            text: "Pretty good! Just finished that project we were working on.",
-          },
-          {
-            id: crypto.randomUUID(),
-            user: "Alice",
-            text: "That's awesome! Did you run into any issues with the API integration?",
-          },
-          {
-            id: crypto.randomUUID(),
-            user: "Bob",
-            text: "A few small hiccups, but nothing we couldn't handle. The documentation was actually helpful for once!",
-          },
-          {
-            id: crypto.randomUUID(),
-            user: "Alice",
-            text: "That's a rare win! Should we schedule a quick call tomorrow to discuss next steps?",
-          },
-        ],
+        messages: [],
       },
       {
         id: crypto.randomUUID(),
-        messages: [
-          {
-            id: crypto.randomUUID(),
-            user: "Carol",
-            text: "Hi team! Just wanted to check in on the progress for the client presentation.",
-          },
-          {
-            id: crypto.randomUUID(),
-            user: "Dave",
-            text: "I've finished the slides for the first section. Need another day for the metrics portion.",
-          },
-          {
-            id: crypto.randomUUID(),
-            user: "Carol",
-            text: "Sounds good. Can you share what you have so far? I'd like to review it.",
-          },
-          {
-            id: crypto.randomUUID(),
-            user: "Dave",
-            text: "Just uploaded to the shared drive. Let me know if you have any feedback!",
-          },
-          {
-            id: crypto.randomUUID(),
-            user: "Eve",
-            text: "I can help with the metrics portion if needed. I have some charts from the previous quarter we could adapt.",
-          },
-          {
-            id: crypto.randomUUID(),
-            user: "Carol",
-            text: "That would be fantastic, Eve! Let's sync up this afternoon.",
-          },
-        ],
+        messages: [],
       },
     ];
   }

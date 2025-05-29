@@ -17,7 +17,7 @@ export function SidebarRoot(props: SidebarRootProps) {
   );
 }
 
-interface SidebarItemProps {
+interface SidebarItemProps extends React.HTMLAttributes<HTMLAnchorElement> {
   to: string;
   children?: React.ReactNode;
 }
@@ -37,9 +37,11 @@ const StyledSidebarItem = styled(Link)`
 `;
 
 export function SidebarItem(props: SidebarItemProps) {
+  const { to, children, ...rest } = props;
+
   return (
-    <StyledSidebarItem nav end className="hover:fg" to={props.to}>
-      {props.children}
+    <StyledSidebarItem nav end className="hover:fg" to={to} {...rest}>
+      {children}
     </StyledSidebarItem>
   );
 }

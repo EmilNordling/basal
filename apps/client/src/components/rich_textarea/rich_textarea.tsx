@@ -26,7 +26,12 @@ function RichTextareaRaw(props: RichTextareaProps) {
   const controller = useResolve(RichTextareaController);
 
   return (
-    <Flex h="full" p="4" onClick={() => void controller.handleClick()}>
+    <Flex
+      h="full"
+      p="4"
+      onClick={() => void controller.handleClick()}
+      className="rich-textarea"
+    >
       <div ref={controller.ref(props)} />
     </Flex>
   );
