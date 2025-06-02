@@ -7,6 +7,7 @@ import {
   ContextMenu,
   Dialog,
   DropdownMenu,
+  FieldInputText,
   Flex,
   Icon,
   InputText,
@@ -290,7 +291,7 @@ function ButtonShowCase() {
 function InputShowCase() {
   return (
     <Section title="Input">
-      <InputText label="label" placeholder="placeholder" />
+      <FieldInputText label="label" placeholder="placeholder" />
     </Section>
   );
 }

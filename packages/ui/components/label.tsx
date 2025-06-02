@@ -2,45 +2,40 @@
 
 import { css } from "@pigment-css/react";
 import { ElementType, forwardRef } from "react";
+import { Field } from "@base-ui-components/react/field";
 import type {
   PolymorphicComponentPropWithRef,
   PolymorphicRef,
 } from "../components_primitives/polymorphic.js";
+import { Text } from "./text.js";
 
 type LabelProps<Comp extends ElementType> = PolymorphicComponentPropWithRef<
   Comp,
   React.HTMLAttributes<HTMLLabelElement>
 >;
 
-const styledLabel = css({
-  all: "unset",
-  wordBreak: "break-all",
-  fontSize: "15px",
-  fontWeight: "500",
-  color: "111",
-});
-
-function _Label<Comp extends ElementType = "label">(
+function _Label<Comp extends ElementType = typeof Field.Label>(
   props: LabelProps<Comp>,
   forwardedRef: PolymorphicRef<Comp>
 ) {
-  const Tag = props.as ?? "label";
+  const Tag = props.as ?? Field.Label;
   const labelProps = extractExoticProps(props);
 
   return (
-    <Tag
-      className={styledLabel}
+    <Text
+      size="small"
+      as={Tag}
       ref={forwardedRef}
       onMouseDown={(event) => {
         // only prevent text selection if clicking inside the label itself
         const target = event.target as HTMLElement;
         if (target.closest("button, input, select, textarea")) return;
 
-        props.onMouseDown?.(event);
+        props.onMouseDown?.(event as any);
         // prevent text selection when double clicking label
         if (!event.defaultPrevented && event.detail > 1) event.preventDefault();
       }}
-      {...labelProps}
+      {...(labelProps as any)}
     />
   );
 }

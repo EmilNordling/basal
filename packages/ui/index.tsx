@@ -1,4 +1,9 @@
 // Components
+export * from "./field_input_text/index.js";
+export * from "./form/index.js";
+
+// REWRITE BELOW
+
 // export { VisuallyHidden } from './components/visually_hidden.js';
 export { Button, type ButtonProps } from "./components/button.js";
 export { Text } from "./components/text.js";
@@ -37,13 +42,9 @@ export {
   type FlexProps,
 } from "./components_primitives/flex.js";
 export { Icon } from "./components_primitives/icon.js";
-export {
-  InputText,
-  type InputProps,
-  type InputTextProps,
-} from "./components/input_text.js";
+export { InputText, type InputTextProps } from "./components/input_text.js";
 export { Label, type LabelProps } from "./components/label.js";
-export { Form } from "./components_primitives/form.js";
+
 export { Slot, Slottable } from "./components_primitives/slot.js";
 export { WoxUiPrimitives } from "./components_primitives/ui_primitives_root.js";
 export { Scroll } from "./components_primitives/scroll.js";

@@ -1,5 +1,6 @@
 import {
   DropdownMenu,
+  FieldInputText,
   Flex,
   Form,
   IconButton,
@@ -66,14 +67,14 @@ function Section() {
         <Flex gap="4">
           <Form.Root>
             <Separator.Root />
-            <InputText
+            <FieldInputText
               name="personalNumber"
               direction="horizontal"
               label="National Identity Number"
               defaultValue={"no-nin"}
             />
             <Separator.Root />
-            <InputText
+            <FieldInputText
               name="firstName"
               direction="horizontal"
               label="FirstName"

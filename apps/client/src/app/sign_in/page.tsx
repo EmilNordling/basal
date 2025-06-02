@@ -1,5 +1,5 @@
 import { AuthService } from "internal/domain/account/auth/auth_service";
-import { Button, Flex, InputText, Text } from "@ui";
+import { Button, Flex, FieldInputText, InputText, Text, Form } from "@ui";
 import { useResolve } from "@wox-team/wox-inject";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -11,16 +11,12 @@ export default function Page() {
   const from = location.state?.from?.pathname || "/app";
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
     const formData = new FormData(event.currentTarget);
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
 
     const result = await authService.signin(email, password);
     if (result.err) return;
-
-    console.log("herere??");
 
     await authService.load();
 
@@ -30,7 +26,12 @@ export default function Page() {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: "contents" }}>
+    <Form.Root
+      onSubmit={handleSubmit}
+      options={{
+        defaultValues: {},
+      }}
+    >
       <Flex grow h="100%" align="center" justify="center">
         <Flex grow align="center" gap="6">
           <Flex gap="5" p="4" mt={250}>
@@ -65,14 +66,21 @@ export default function Page() {
               </Flex>
 
               <Flex gap="2">
-                <InputText
+                <FieldInputText
                   name="email"
+                  label="username"
                   autoComplete="email"
                   placeholder="Email"
-                  label="username"
                   hideLabel
+                  options={{
+                    maxLength: {
+                      message: "Max 4",
+                      value: 4,
+                    },
+                  }}
                 />
-                <InputText
+
+                <FieldInputText
                   name="password"
                   type="password"
                   placeholder="Password"
@@ -97,6 +105,6 @@ export default function Page() {
           </Flex>
         </Flex>
       </Flex>
-    </form>
+    </Form.Root>
   );
 }

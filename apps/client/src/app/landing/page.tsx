@@ -1,5 +1,5 @@
 import { styled } from "@pigment-css/react";
-import { Button, Flex, Icon, Link, Scroll, Separator, Text } from "@ui";
+import { Button, Flex, Icon, Link, Separator, Text } from "@ui";
 import { motion } from "motion/react";
 import { Header } from "./_components/header";
 
