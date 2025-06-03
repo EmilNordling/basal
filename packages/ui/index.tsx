@@ -2,11 +2,11 @@
 export * from "./field_input_text/index.js";
 export * from "./form/index.js";
 export * from "./components/text/index.js";
+export * from "./components/button/button.js";
 
 // REWRITE BELOW
 
 // export { VisuallyHidden } from './components/visually_hidden.js';
-export { Button, type ButtonProps } from "./components/button.js";
 export { Sidebar } from "./components/sidebar.js";
 export { Table } from "./components/table.js";
 export { DropdownMenu } from "./components/dropdown_menu.js";

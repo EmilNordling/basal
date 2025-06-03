@@ -1,7 +1,7 @@
 // import { utils } from "@base-ui-components/react";
 import { Form as FormBUI } from "@base-ui-components/react/form";
 import { createContext, useContext } from "react";
-import { Button, type ButtonProps } from "../index.js";
+import { Button } from "../index.js";
 import styles from "./index.module.css";
 import cn from "classnames";
 import {
@@ -62,7 +62,7 @@ export function FormRoot(props: FormRootProps) {
   );
 }
 
-export interface FormButtonProps extends ButtonProps<"button"> {}
+export interface FormButtonProps extends Button.Props<"button"> {}
 
 export function FormButton(props: FormButtonProps) {
   return <Button {...props} type="submit" />;
