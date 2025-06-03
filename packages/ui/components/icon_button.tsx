@@ -5,14 +5,11 @@ import {
   PrimitiveButton,
   type PrimitiveButtonProps,
 } from "../components_primitives/primitive_button.js";
-import {
-  type PolymorphicComponentPropWithRef,
-  SpacingSteps,
-} from "../index.js";
+import { type Polymorphic, SpacingSteps } from "../index.js";
 import { type IconType, Icon } from "../components_primitives/icon.js";
 
 export type IconButtonProps<C extends React.ElementType> =
-  PolymorphicComponentPropWithRef<
+  Polymorphic.ComponentPropWithRef<
     C,
     PrimitiveButtonProps<C> & {
       size?: SpacingSteps;

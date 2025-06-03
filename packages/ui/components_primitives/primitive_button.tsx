@@ -4,10 +4,10 @@ import cn from "classnames";
 import { ForwardedRef, forwardRef } from "react";
 import "./primitive_button.css";
 import { Slot } from "@radix-ui/react-slot";
-import { type PolymorphicComponentPropWithRef } from "./polymorphic.js";
+import { type Polymorphic } from "./polymorphic.js";
 
 export type PrimitiveButtonProps<C extends React.ElementType> =
-  PolymorphicComponentPropWithRef<C, React.ButtonHTMLAttributes<C>>;
+  Polymorphic.ComponentPropWithRef<C, React.ButtonHTMLAttributes<C>>;
 
 function Button<C extends React.ElementType>(
   props: PrimitiveButtonProps<C>,

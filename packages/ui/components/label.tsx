@@ -3,20 +3,17 @@
 import { css } from "@pigment-css/react";
 import { ElementType, forwardRef } from "react";
 import { Field } from "@base-ui-components/react/field";
-import type {
-  PolymorphicComponentPropWithRef,
-  PolymorphicRef,
-} from "../components_primitives/polymorphic.js";
-import { Text } from "./text.js";
+import type { Polymorphic } from "../components_primitives/polymorphic.js";
+import { Text } from "./text/text.js";
 
-type LabelProps<Comp extends ElementType> = PolymorphicComponentPropWithRef<
+type LabelProps<Comp extends ElementType> = Polymorphic.ComponentPropWithRef<
   Comp,
   React.HTMLAttributes<HTMLLabelElement>
 >;
 
 function _Label<Comp extends ElementType = typeof Field.Label>(
   props: LabelProps<Comp>,
-  forwardedRef: PolymorphicRef<Comp>
+  forwardedRef: Polymorphic.Ref<Comp>
 ) {
   const Tag = props.as ?? Field.Label;
   const labelProps = extractExoticProps(props);

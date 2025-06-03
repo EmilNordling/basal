@@ -6,12 +6,9 @@ import { Slot } from "./slot.js";
 import { Injectable, useResolve } from "@wox-team/wox-inject";
 import type { SpacingSteps } from "../style_primitives/spacing.types.js";
 import type { Colors } from "../style_primitives/colors.types.js";
-import {
-  PolymorphicComponentPropWithRef,
-  PolymorphicRef,
-} from "./polymorphic.js";
+import { Polymorphic } from "./polymorphic.js";
 
-type FlexProps<C extends React.ElementType> = PolymorphicComponentPropWithRef<
+type FlexProps<C extends React.ElementType> = Polymorphic.ComponentPropWithRef<
   C,
   CommonFlexProps &
     ExoticFlexProps &
@@ -21,7 +18,7 @@ type FlexProps<C extends React.ElementType> = PolymorphicComponentPropWithRef<
 
 function FlexPrimitive<C extends React.ElementType = "div">(
   props: FlexProps<C>,
-  forwardedRef: PolymorphicRef<C>
+  forwardedRef: Polymorphic.Ref<C>
 ) {
   const store = useResolve(DynamicCss);
 

@@ -1,12 +1,12 @@
 // Components
 export * from "./field_input_text/index.js";
 export * from "./form/index.js";
+export * from "./components/text/index.js";
 
 // REWRITE BELOW
 
 // export { VisuallyHidden } from './components/visually_hidden.js';
 export { Button, type ButtonProps } from "./components/button.js";
-export { Text } from "./components/text.js";
 export { Sidebar } from "./components/sidebar.js";
 export { Table } from "./components/table.js";
 export { DropdownMenu } from "./components/dropdown_menu.js";
@@ -53,11 +53,7 @@ export {
   type PrimitiveButtonProps,
 } from "./components_primitives/primitive_button.js";
 export { Link } from "./components_primitives/link.js";
-export {
-  type PolymorphicComponentProp,
-  type PolymorphicComponentPropWithRef,
-  type PolymorphicRef,
-} from "./components_primitives/polymorphic.js";
+export * from "./components_primitives/polymorphic.js";
 export {
   AccessibleIcon,
   type AccessibleIconProps,

@@ -3,7 +3,7 @@
 import { styled } from "@pigment-css/react";
 import { Link } from "../components_primitives/link.js";
 import { Flex } from "../components_primitives/flex.js";
-import { Text } from "./text.js";
+import { Text } from "./text/text.js";
 
 interface SidebarRootProps {
   children?: React.ReactNode;

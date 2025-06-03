@@ -221,52 +221,52 @@
 }
 
 .wox-text {
-  &:where(.wox-text-size-inherit) {
+  &:global(:where(.wox-text-size-inherit)) {
     font: inherit;
   }
-  &:where(.wox-text-size-title-9) {
+  &:global(:where(.wox-text-size-title-9)) {
     font: var(--title-9);
   }
-  &:where(.wox-text-size-title-8) {
+  &:global(:where(.wox-text-size-title-8)) {
     font: var(--title-8);
   }
-  &:where(.wox-text-size-title-7) {
+  &:global(:where(.wox-text-size-title-7)) {
     font: var(--title-7);
   }
-  &:where(.wox-text-size-title-6) {
+  &:global(:where(.wox-text-size-title-6)) {
     font: var(--title-6);
   }
-  &:where(.wox-text-size-title-5) {
+  &:global(:where(.wox-text-size-title-5)) {
     font: var(--title-5);
   }
-  &:where(.wox-text-size-title-4) {
+  &:global(:where(.wox-text-size-title-4)) {
     font: var(--title-4);
   }
-  &:where(.wox-text-size-title-3) {
+  &:global(:where(.wox-text-size-title-3)) {
     font: var(--title-3);
   }
-  &:where(.wox-text-size-title-2) {
+  &:global(:where(.wox-text-size-title-2)) {
     font: var(--title-2);
   }
-  &:where(.wox-text-size-title-1) {
+  &:global(:where(.wox-text-size-title-1)) {
     font: var(--title-1);
   }
-  &:where(.wox-text-size-large) {
+  &:global(:where(.wox-text-size-large)) {
     font: var(--text-large);
   }
-  &:where(.wox-text-size-regular) {
+  &:global(:where(.wox-text-size-regular)) {
     font: var(--text-regular);
   }
-  &:where(.wox-text-size-small) {
+  &:global(:where(.wox-text-size-small)) {
     font: var(--text-small);
   }
-  &:where(.wox-text-size-mini) {
+  &:global(:where(.wox-text-size-mini)) {
     font: var(--text-mini);
   }
-  &:where(.wox-text-size-micro) {
+  &:global(:where(.wox-text-size-micro)) {
     font: var(--text-micro);
   }
-  &:where(.wox-text-size-tiny) {
+  &:global(:where(.wox-text-size-tiny)) {
     font: var(--text-tiny);
   }
 }

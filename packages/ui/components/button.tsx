@@ -5,11 +5,7 @@ import {
   PrimitiveButton,
   type PrimitiveButtonProps,
 } from "../components_primitives/primitive_button.js";
-import {
-  Text,
-  type PolymorphicComponentPropWithRef,
-  type SpacingSteps,
-} from "../index.js";
+import { Text, type Polymorphic, type SpacingSteps } from "../index.js";
 import { getResponsiveClassName } from "../style_primitives/responsive_class_name.js";
 
 function ButtonPrimitive<C extends React.ElementType = "button">(
@@ -48,7 +44,7 @@ function ButtonPrimitive<C extends React.ElementType = "button">(
 }
 
 export type ButtonProps<C extends React.ElementType> =
-  PolymorphicComponentPropWithRef<
+  Polymorphic.ComponentPropWithRef<
     C,
     PrimitiveButtonProps<C> & {
       size?: SpacingSteps;

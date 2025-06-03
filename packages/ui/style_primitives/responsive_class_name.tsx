@@ -1,5 +1,5 @@
 export function getResponsiveClassName<T extends string>(
-  size: ResponsiveSize<T>,
+  size: getResponsiveClassName.Size<T>,
   target: string
 ): string {
   if (typeof size === "object") {
@@ -18,13 +18,15 @@ export function getResponsiveClassName<T extends string>(
   return target + size;
 }
 
-export type ResponsiveSize<T extends string> = T | ResponsiveObject<T>;
+export namespace getResponsiveClassName {
+  export type Size<T extends string> = T | Record<T>;
 
-export type ResponsiveObject<T extends string> = {
-  initial: T;
-  small?: T;
-  medium?: T;
-  large?: T;
-  xl?: T;
-  "2xl"?: T;
-};
+  export type Record<T extends string> = {
+    initial: T;
+    small?: T;
+    medium?: T;
+    large?: T;
+    xl?: T;
+    "2xl"?: T;
+  };
+}
