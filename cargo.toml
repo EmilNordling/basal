@@ -1,0 +1,5 @@
+[workspace]
+members = ["apps/client/src-tauri"]
+# Only check / build main crates by default (check all with `--workspace`)
+default-members = ["apps/client/src-tauri"]
+resolver = "2"

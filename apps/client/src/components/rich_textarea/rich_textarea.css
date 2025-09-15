@@ -1,0 +1,9 @@
+.ql-hidden {
+  display: none;
+}
+
+.rich-textarea {
+  p {
+    font: var(--text-regular);
+  }
+}

@@ -1,0 +1,29 @@
+.Container {
+  display: flex;
+  gap: 0.3rem;
+  justify-content: space-between;
+
+  & .ContainerText {
+    display: flex;
+    gap: 4px;
+    min-width: 0px;
+  }
+
+  &[data-direction="vertical"] {
+    flex-direction: column;
+
+    & .ContainerText {
+      flex-flow: column wrap;
+      flex-grow: 1;
+    }
+  }
+
+  &[data-direction="horizontal"] {
+    align-items: center;
+
+    & .ContainerText {
+      flex-flow: column wrap;
+      flex-grow: 1;
+    }
+  }
+}

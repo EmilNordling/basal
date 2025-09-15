@@ -1,0 +1,12 @@
+:root {
+	--cursor-button: default;
+	--cursor-checkbox: default;
+	--cursor-disabled: default;
+	--cursor-link: default;
+	--cursor-menu-item: default;
+	--cursor-text: default;
+	--cursor-radio: default;
+	--cursor-slider-thumb: default;
+	--cursor-slider-thumb-active: default;
+	--cursor-switch: default;
+}

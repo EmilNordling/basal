@@ -1,0 +1,19 @@
+.wox-button-reset {
+  white-space: nowrap;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+  app-region: no-drag;
+
+  transition-duration: 100ms;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-behavior: normal;
+  transition-property: border, background-color, color, opacity;
+  transition-duration: 0.15s;
+}

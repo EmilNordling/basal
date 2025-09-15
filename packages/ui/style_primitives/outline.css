@@ -1,0 +1,6 @@
+.outline {
+  &:focus-visible {
+    outline: var(--focus-ring-outline);
+    outline-offset: 2px;
+  }
+}
